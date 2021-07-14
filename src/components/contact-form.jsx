@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Formik, Field, Form } from 'formik';
-// import { useState } from 'react'
-// import { fetchAPI } from '../utils/api'
 import * as yup from 'yup'
 
 import emailjs from 'emailjs-com';
@@ -46,7 +44,7 @@ const ContactForm = () => (
         message: '',
       }}
       validationSchema={validationSchema}
-      onSubmit={async (values) => {
+      onSubmit={async (values, { setSubmitting, setErrors }) => {
         await sleep(500);
         console.log(JSON.stringify(values, null, 2));
         fetch('https://quartier10h10-admin.herokuapp.com/contact-forms', {
@@ -68,17 +66,30 @@ const ContactForm = () => (
         resetForm()
       }}
     >
-      {({ isSubmitting }) => (
+      {({ errors,
+          touched,
+          isSubmitting,
+      }) => (
         <Form id="contactForm">
             <div className="inputs">
-                <div><Field name="name" placeholder="Name *" /></div>
-                <div><Field name="email" placeholder="Email *" type="email" /></div>
+                <div>
+                  <Field name="name" placeholder="Name *" />
+                  {errors.name && touched.name ? <div>{errors.name}</div> : null}
+                </div>
+                <div>
+                  <Field name="email" placeholder="Email *" type="email" />
+                  {errors.email && touched.email ? <div>{errors.email}</div> : null}
+                </div>
             </div>
             <div className="sujet">
+              <div>
                 <Field name="subject" placeholder="Subject *" />
+                {errors.subject && touched.subject ? <div>{errors.subject}</div> : null}
+              </div>
             </div>
             <div className="textarea">
                 <Field name="message" placeholder="Message *" as="textarea" />
+                {errors.message && touched.message ? <div>{errors.message}</div> : null}
             </div>
             <button type="submit" disabled={isSubmitting ? 'disabled' : ''}>
                 Submit
