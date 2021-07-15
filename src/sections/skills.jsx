@@ -1,7 +1,7 @@
 import React from 'react'
 import Markdown from 'markdown-to-jsx'
 
-class Hero extends React.Component {
+class Skills extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -9,27 +9,29 @@ class Hero extends React.Component {
         title: this.props.content.title,
         description: this.props.content.description,
         button: this.props.content.button,
-        image: this.props.content.image
+        cards: this.props.content.card
       };
     }
   
     render() {
 
       return (
-            <div className="hero">
+            <div className="expertises">
               <div className="container">
-                <div>
                   <h1 className="title">{this.state.title}</h1>
                   <Markdown className="description">{this.state.description}</Markdown>
-                  <button>{this.state.button.title}</button>
-                </div>
-                <div>
-                  <img src={this.state.image.url} />
-                </div>
+                  <div className="cards">
+                    {this.state.cards.map((card) => 
+                      <div key={card.id}>
+                        <h3>{card.title}</h3>
+                        <Markdown className="description">{card.description}</Markdown>
+                      </div>
+                    )}
+                  </div>
               </div>
             </div>
           )
     }
 }
 
-export default Hero
+export default Skills
