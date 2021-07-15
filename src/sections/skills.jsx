@@ -22,7 +22,10 @@ class Skills extends React.Component {
                   <Markdown className="description">{this.state.description}</Markdown>
                   <div className="cards">
                     {this.state.cards.map((card) => 
-                      <div key={card.id}>
+                      <div key={card.id} className="card">
+                        <div className="icon">
+                          <img src={card.icon.url} />
+                        </div>
                         <h3>{card.title}</h3>
                         <Markdown className="description">{card.description}</Markdown>
                       </div>

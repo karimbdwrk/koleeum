@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Hero from '../sections/hero'
 import Skills from '../sections/skills'
 import Services from '../sections/services'
+import Prestations from '../sections/prestations'
+import Newsletter from '../sections/newsletter'
 import Playlist from '../sections/playlist'
 import Contact from '../sections/contact'
 
@@ -21,7 +23,10 @@ class Home extends React.Component {
               this.setState({
                 isLoaded: true,
                 hero: result.hero,
-                expertises: result.expertise
+                expertises: result.expertise,
+                services: result.services,
+                prestations: result.prestations,
+                newsletter: result.newsletter
               });
     
             },
@@ -47,11 +52,11 @@ class Home extends React.Component {
         } else {
           return (
             <div className="home">
-              <Hero content={this.state.hero} />
-              <Skills content={this.state.expertises} />
-              <Services />
-              <Playlist />
-              <Contact />
+                <Hero content={this.state.hero} />
+                <Skills content={this.state.expertises} />
+                <Services content={this.state.services} />
+                <Prestations content={this.state.prestations} />
+                <Newsletter content={this.state.newsletter} />
             </div>
           );
         }

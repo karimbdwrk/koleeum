@@ -6,67 +6,31 @@ class Services extends React.Component {
       super(props);
       this.state = {
         error: null,
-        title: '',
-        description: '',
-        skills: []
+        services: this.props.content.service
       };
     }
-  
-    componentDidMount() {
-      fetch("https://quartier10h10-admin.herokuapp.com/competences")
-        .then(res => res.json())
-        .then(
-          (result) => {
-            this.setState({
-              isLoaded: true,
-              title: result.Title,
-              description: result.Description,
-              skills: result.Skills
-            });
 
-          },
-          // Remarque : il est important de traiter les erreurs ici
-          // au lieu d'utiliser un bloc catch(), pour ne pas passer à la trappe
-          // des exceptions provenant de réels bugs du composant.
-          (error) => {
-            this.setState({
-              isLoaded: true,
-              error
-            });
-          }
-        )
-    }
-  
     render() {
 
-        const { error, isLoaded, items } = this.state;
-        if (error) {
-            return <div>Erreur : {error.message}</div>;
-        } else if (!isLoaded) {
-            return <div>Chargement…</div>;
-        } else {
-            return (
-                <div id="skills" className="services">
-                    <div className="container">
-                        <h2 className="title">{this.state.title}</h2>
-                        <Markdown options={{ wrapper: 'div', forceWrapper: true }} className="description">{this.state.description}</Markdown>
-                        <div className="skills">
-                            {this.state.skills.Skill.map((skill) => 
-                                <div className="skill" key={skill.id}>
-                                    <div className="icon-container">
-                                        <img className="icon" src={skill.Icon.url} />
-                                    </div>
-                                    <div className="txt-container">
-                                        <h3>{skill.Title}</h3>
-                                        <Markdown className="description">{skill.Description}</Markdown>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
+      return (
+            <div className="services">
+              <div className="container">
+                {this.state.services.map((service) =>
+                    <div key={service.id} className="service">
+                      <div>
+                        <img src={service.image.url} />
+                      </div>
+                      <div>
+                        <h1 className="title">{service.title}</h1>
+                        <Markdown options={{ wrapper: 'p', forceWrapper: true }} className="description">{service.description}</Markdown>
+                        <button>En savoir plus</button>
+                      </div>
                     </div>
-                </div>
-            )
-        }
+                )}
+                
+              </div>
+            </div>
+          )
     }
 }
 

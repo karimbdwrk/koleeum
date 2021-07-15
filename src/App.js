@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './global/header'
+import Footer from './global/footer'
 import Home from './pages/home'
 import logo from './logo.svg';
 
@@ -11,7 +12,9 @@ class App extends React.Component {
     this.state = {
       error: null,
       header: {},
-      hero: {}
+      footerInfo: {},
+      footerNav: [],
+      socialNetworks: []
     };
   }
 
@@ -22,7 +25,10 @@ class App extends React.Component {
         (result) => {
           this.setState({
             isLoaded: true,
-            header: result.header
+            header: result.header,
+            footerInfo: result.footer_informations,
+            footerNav: result.footer_navigation,
+            socialNetworks: result.social_network
           });
 
         },
@@ -72,6 +78,7 @@ class App extends React.Component {
         <div className="App">
           <Header content={this.state.header} />
           <Home />
+          <Footer footerInfo={this.state.footerInfo} footerNav={this.state.footerNav} socialNetworks={this.state.socialNetworks} />
         </div>
       );
     }

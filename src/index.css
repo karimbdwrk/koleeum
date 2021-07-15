@@ -9,16 +9,16 @@
 }
 
 body {
-  background-color: #f7f7f7;
+  background-color: #ffffff;
   padding: 0;
   margin: 0;
 }
 
 /* END GENERAL */
 .App {
-  background-color: #f7f7f7;
+  background-color: #ffffff;
   color: #000;
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -53,7 +53,7 @@ body {
 }
 .App header .container .nav a {
   vertical-align: bottom;
-  font-size: 18px;
+  font-size: 16px;
   text-decoration: none;
   cursor: pointer;
 }
@@ -110,6 +110,82 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
+}
+.App .expertises .container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.App .expertises .container > .title {
+  text-align: center;
+}
+.App .expertises .container > .description {
+  text-align: center;
+}
+.App .expertises .container .cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.App .expertises .container .cards .card {
+  border: 1px solid #EEE;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.App .expertises .container .cards .card .icon {
+  height: 30px;
+  width: 30px;
+  border: 1px solid #000;
+}
+.App .services {
+  display: flex;
+  justify-content: center;
+}
+.App .services .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.App .services .container .service {
+  display: flex;
+  flex-direction: row;
+}
+.App .services .container .service:nth-of-type(2n) div:first-of-type {
+  order: 2;
+}
+.App .services .container .service:nth-of-type(2n) div:last-of-type {
+  order: 1;
+}
+.App .prestations {
+  display: flex;
+  justify-content: center;
+}
+.App .prestations .container {
+  display: flex;
+  flex-direction: row;
+}
+.App .prestations .container .prestas {
+  display: flex;
+  flex-direction: column;
+}
+.App .prestations .container .prestas .presta {
+  display: flex;
+  flex-direction: row;
+}
+.App .prestations .container .prestas .presta .icon {
+  width: 50px;
+}
+.App .newsletter {
+  display: flex;
+  justify-content: center;
+}
+.App .newsletter .container .title {
+  text-align: center;
+}
+.App .newsletter .container .description {
+  text-align: center;
 }
 .App .manifesto {
   padding: 30px 0;
