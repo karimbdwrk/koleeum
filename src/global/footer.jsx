@@ -18,14 +18,14 @@ class Footer extends React.Component {
         console.log(this.state.footerInfo)
 
         return (
-          <footer>
+          <footer className="footer">
             <div className="container">
               <div className="logo">
                   <img src={this.state.footerInfo.logo.url} />
               </div>
               {this.state.footerNav.map((column) => 
                 <div className="column">
-                    <h3>{column.title}</h3>
+                    <h3 className="title">{column.title}</h3>
                     <ul>
                     {column.link.map((l) => 
                         <li>{l.title}</li>
@@ -34,10 +34,15 @@ class Footer extends React.Component {
                 </div>
               )}
               <ContactForm />
+            </div>
+            <div className="container">
               <div className="reseaux-sociaux">
                 {this.state.socialNetworks.map((social) => 
                     <a><img src={social.icon.url} /></a>
                 )}
+              </div>
+              <div className="copyright">
+                <p>copyright - 2021</p>
               </div>
             </div>
           </footer>

@@ -26,7 +26,7 @@ class Skills extends React.Component {
                         <div className="icon">
                           <img src={card.icon.url} />
                         </div>
-                        <h3>{card.title}</h3>
+                        <h3 className="title">{card.title}</h3>
                         <Markdown className="description">{card.description}</Markdown>
                       </div>
                     )}

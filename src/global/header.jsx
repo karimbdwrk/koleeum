@@ -44,13 +44,13 @@ class Header extends React.Component {
               <nav className={this.state.toggleOpen ? 'nav open' : 'nav'}>
                   { this.props.content.navigation.map((navlink, index) => {
                   return (
-                        <Link key={index} to={navlink.link} spy={true} smooth={true}>{navlink.title}</Link>
+                        <Link key={index} to={navlink.link} spy={true} smooth={true} className="hvr-underline-from-left">{navlink.title}</Link>
                       )
                   }) 
                   }
               </nav>
               <div className="my-account">
-                  <button>{this.props.content.button.title}</button>
+                  <button className="btn">{this.props.content.button.title}</button>
               </div>
             </div>
           </header>

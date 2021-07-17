@@ -13,13 +13,12 @@ class Newsletter extends React.Component {
     }
 
     render() {
-        console.log(this.state.content)
 
       return (
             <div className="newsletter">
                 <div className="container">
                     <h2 className="title">{this.state.title}</h2>
-                    <Markdown options={{ wrapper: 'p', forceWrapper: true }} className="description">{this.state.description}</Markdown>
+                    <Markdown options={{ wrapper: 'div', forceWrapper: true }} className="description">{this.state.description}</Markdown>
                     <div className="newsletter-form">
                         <NewsletterForm />
                     </div>

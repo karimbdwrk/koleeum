@@ -35,7 +35,8 @@ const validationSchema = yup.object().shape({
 })
 
 const ContactForm = () => (
-  <div>
+  <div className="contact-form">
+    <h3>Contactez-nous</h3>
     <Formik
       initialValues={{
         name: '',
@@ -47,7 +48,7 @@ const ContactForm = () => (
       onSubmit={async (values, { setSubmitting, setErrors }) => {
         await sleep(500);
         console.log(JSON.stringify(values, null, 2));
-        fetch('https://quartier10h10-admin.herokuapp.com/contact-forms', {
+        fetch('https://koleeum-admin.herokuapp.com/messages', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -74,24 +75,24 @@ const ContactForm = () => (
             <div className="inputs">
                 <div>
                   <Field name="name" placeholder="Name *" />
-                  {errors.name && touched.name ? <div>{errors.name}</div> : null}
+                  {errors.name && touched.name ? <div className="error-message">{errors.name}</div> : null}
                 </div>
                 <div>
                   <Field name="email" placeholder="Email *" type="email" />
-                  {errors.email && touched.email ? <div>{errors.email}</div> : null}
+                  {errors.email && touched.email ? <div className="error-message">{errors.email}</div> : null}
                 </div>
             </div>
             <div className="sujet">
               <div>
                 <Field name="subject" placeholder="Subject *" />
-                {errors.subject && touched.subject ? <div>{errors.subject}</div> : null}
+                {errors.subject && touched.subject ? <div className="error-message">{errors.subject}</div> : null}
               </div>
             </div>
             <div className="textarea">
                 <Field name="message" placeholder="Message *" as="textarea" />
-                {errors.message && touched.message ? <div>{errors.message}</div> : null}
+                {errors.message && touched.message ? <div className="error-message">{errors.message}</div> : null}
             </div>
-            <button type="submit" disabled={isSubmitting ? 'disabled' : ''}>
+            <button className="btn" type="submit" disabled={isSubmitting ? 'disabled' : ''}>
                 Submit
             </button>
         </Form>

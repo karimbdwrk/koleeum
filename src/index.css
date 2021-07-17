@@ -2,10 +2,60 @@
   display: block;
 }
 
+/* VARIABLES */
+/* ANIMATION */
+/* Underline From Left */
+.hvr-underline-from-left {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+.hvr-underline-from-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  background: #171E49;
+  height: 3px;
+  -webkit-transition-property: right;
+  transition-property: right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-left:hover:before, .hvr-underline-from-left:focus:before, .hvr-underline-from-left:active:before {
+  right: 0;
+}
+
 /* GENERAL */
 .container {
   max-width: 1400px;
   width: 100%;
+}
+
+button.btn {
+  cursor: pointer;
+  background-color: #4270ED;
+  color: #FFFFFF;
+  border: 0;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 30px;
+  width: fit-content;
+  box-shadow: 2px 2px 5px #00000022;
+}
+button.btn:hover {
+  transition: box-shadow 300ms ease;
+  box-shadow: 3px 3px 10px #00000022;
 }
 
 body {
@@ -17,7 +67,7 @@ body {
 /* END GENERAL */
 .App {
   background-color: #ffffff;
-  color: #000;
+  color: #171E49;
   font-family: "Montserrat", sans-serif;
   display: flex;
   justify-content: center;
@@ -54,6 +104,7 @@ body {
 .App header .container .nav a {
   vertical-align: bottom;
   font-size: 16px;
+  font-weight: 500;
   text-decoration: none;
   cursor: pointer;
 }
@@ -61,16 +112,12 @@ body {
   width: 20%;
   display: flex;
   justify-content: flex-end;
-}
-.App header .container div.my-account button {
-  padding: 6px 25px;
-  height: fit-content;
+  align-items: center;
 }
 .App .hero {
-  padding: 25vh 0;
-  height: 50vh;
   display: flex;
   justify-content: center;
+  padding: 90px 0;
 }
 .App .hero .container {
   display: flex;
@@ -79,35 +126,40 @@ body {
 .App .hero .container > div {
   width: 50%;
 }
-.App .hero .container > div .title {
-  font-size: 34px;
+.App .hero .container > div.txt-content {
+  color: #171E49;
 }
-.App .hero .container > div .description {
+.App .hero .container > div.txt-content .title {
+  font-size: 48px;
+  margin-top: 90px;
+}
+.App .hero .container > div.txt-content .description {
   font-size: 24px;
   font-weight: 400;
+  margin-bottom: 30px;
 }
-.App .hero .container > div .description p {
+.App .hero .container > div.txt-content .description p {
   margin-top: 0;
   margin-bottom: 0;
   font-weight: 300;
 }
-.App .hero .container > div .description strong {
+.App .hero .container > div.txt-content .description strong {
   font-weight: 500;
 }
-.App .hero .container > div .description em {
+.App .hero .container > div.txt-content .description em {
   font-weight: 400;
 }
-.App .hero .container > div button {
-  padding: 6px 25px;
-  height: fit-content;
+.App .hero .container > div.image {
+  display: flex;
+  justify-content: flex-end;
 }
-.App .hero .container > div img {
+.App .hero .container > div.image img {
+  justify-self: flex-end;
   max-height: 600px;
   width: auto;
 }
 .App .expertises {
   padding: 30px 0;
-  height: 100vh;
   display: flex;
   justify-content: center;
 }
@@ -116,30 +168,64 @@ body {
   justify-content: center;
   flex-direction: column;
 }
+.App .expertises .container p {
+  margin: 0;
+}
 .App .expertises .container > .title {
   text-align: center;
+  font-size: 42px;
 }
 .App .expertises .container > .description {
   text-align: center;
+  font-size: 22px;
+  font-weight: 400;
 }
 .App .expertises .container .cards {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-top: 90px;
 }
 .App .expertises .container .cards .card {
   border: 1px solid #EEE;
+  border-radius: 30px;
+  padding: 30px 15px;
+  height: 300px;
+  margin-right: 60px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
+.App .expertises .container .cards .card:last-of-type {
+  margin-right: 0;
+}
 .App .expertises .container .cards .card .icon {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 5px #00000022;
+}
+.App .expertises .container .cards .card .icon img {
   height: 30px;
-  width: 30px;
-  border: 1px solid #000;
+  width: auto;
+}
+.App .expertises .container .cards .card .title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.App .expertises .container .cards .card .description {
+  font-size: 20px;
+  font-weight: 400;
 }
 .App .services {
+  padding: 30px 0;
   display: flex;
   justify-content: center;
 }
@@ -149,8 +235,10 @@ body {
   justify-content: center;
 }
 .App .services .container .service {
+  margin-top: 90px;
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 .App .services .container .service:nth-of-type(2n) div:first-of-type {
   order: 2;
@@ -158,7 +246,30 @@ body {
 .App .services .container .service:nth-of-type(2n) div:last-of-type {
   order: 1;
 }
+.App .services .container .service .image {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+}
+.App .services .container .service .image img {
+  max-height: 500px;
+}
+.App .services .container .service .txt-content {
+  width: 50%;
+  margin-top: 90px;
+}
+.App .services .container .service .txt-content .title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.App .services .container .service .txt-content .description {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
 .App .prestations {
+  padding: 30px 0;
   display: flex;
   justify-content: center;
 }
@@ -166,338 +277,236 @@ body {
   display: flex;
   flex-direction: row;
 }
-.App .prestations .container .prestas {
+.App .prestations .container .image {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+.App .prestations .container .image img {
+  max-height: 600px;
+}
+.App .prestations .container .txt-content {
+  width: 50%;
+  margin-top: 90px;
+}
+.App .prestations .container .txt-content > .title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.App .prestations .container .txt-content > .description {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.App .prestations .container .txt-content > .description p {
+  margin: 0;
+}
+.App .prestations .container .txt-content .prestas {
   display: flex;
   flex-direction: column;
 }
-.App .prestations .container .prestas .presta {
+.App .prestations .container .txt-content .prestas .presta {
+  margin-bottom: 30px;
   display: flex;
   flex-direction: row;
 }
-.App .prestations .container .prestas .presta .icon {
-  width: 50px;
-}
-.App .newsletter {
+.App .prestations .container .txt-content .prestas .presta .icon {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 5px #00000022;
+}
+.App .prestations .container .txt-content .prestas .presta .icon img {
+  height: 30px;
+  width: auto;
+}
+.App .prestations .container .txt-content .prestas .presta .txt {
+  width: 70%;
+  padding-left: 30px;
+}
+.App .prestations .container .txt-content .prestas .presta .txt .title {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0;
+}
+.App .prestations .container .txt-content .prestas .presta .txt .description {
+  font-size: 20px;
+}
+.App .newsletter {
+  margin-top: 90px;
+  margin-bottom: 90px;
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+}
+.App .newsletter .container {
+  padding: 50px 0;
+  border: 1px solid #eee;
+  border-radius: 30px;
+  width: 80%;
 }
 .App .newsletter .container .title {
   text-align: center;
+  font-size: 42px;
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 .App .newsletter .container .description {
   text-align: center;
-}
-.App .manifesto {
-  padding: 30px 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-}
-.App .manifesto .container .title {
-  font-size: 72px;
-  margin-bottom: 90px;
-  font-weight: 500;
-}
-.App .manifesto .container .description p {
-  font-size: 24px;
-  margin: 0;
-  font-weight: 200;
-}
-.App .manifesto .container .description strong {
-  font-weight: 500;
-}
-.App .manifesto .container .description em {
-  font-weight: 400;
-}
-.App .manifesto .container .signature {
-  font-family: "Painted Brush";
-  font-size: 72px;
-}
-.App .services {
-  display: flex;
-  justify-content: center;
-}
-.App .services > .container > .title {
-  font-size: 72px;
-  margin-bottom: 90px;
-  width: 100%;
-  font-weight: 500;
-}
-.App .services > .container > .description {
   font-size: 22px;
-  margin-bottom: 70px;
-  font-weight: 200;
+  margin-bottom: 50px;
 }
-.App .services > .container > .description p {
+.App .newsletter .container .description p {
   margin: 0;
-  font-weight: 200;
 }
-.App .services > .container > .description strong {
-  font-weight: 500;
-}
-.App .services > .container > .description em {
-  font-weight: 400;
-}
-.App .services .skills {
-  padding: 30px 0;
-  height: 100vh;
-  width: 100%;
-}
-.App .services .skills .skill {
+.App .newsletter .container .newsletter-form {
   display: flex;
-  margin-bottom: 60px;
-}
-.App .services .skills .skill .icon-container {
-  width: 20%;
-}
-.App .services .skills .skill .icon-container img.icon {
-  max-height: 140px;
-  width: auto;
-}
-.App .services .skills .skill .txt-container {
-  width: 80%;
-  padding-left: 30px;
-}
-.App .services .skills .skill .txt-container h3 {
-  margin-top: 0;
-  margin-bottom: 15px;
-  font-size: 34px;
-  font-weight: 500;
-}
-.App .services .skills .skill .txt-container .description {
-  padding-left: 0;
-}
-.App .services .skills .skill .txt-container .description li {
-  list-style: none;
-  font-size: 18px;
-  font-weight: 200;
-}
-.App .services .skills .skill .txt-container .description p {
-  font-size: 18px;
-  margin: 0;
-  font-weight: 200;
-}
-.App .services .skills .skill .txt-container .description strong {
-  font-weight: 500;
-}
-.App .services .skills .skill .txt-container .description em {
-  font-weight: 400;
-}
-.App .playlist {
-  width: 100%;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  height: 75vh;
-  display: flex;
-  flex-direction: row;
   justify-content: center;
 }
-.App .playlist .container {
-  display: flex;
-  flex-direction: row;
-}
-.App .playlist .container div.txt {
-  width: 66%;
-}
-.App .playlist .container div.txt .title {
-  font-size: 72px;
-  margin-bottom: 90px;
-  margin-top: 0;
+.App .newsletter .container .newsletter-form > div {
   width: 100%;
-  font-weight: 500;
 }
-.App .playlist .container div.txt .description {
-  font-size: 22px;
-  width: 80%;
-  font-weight: 200;
-}
-.App .playlist .container div.txt .description li {
-  list-style: none;
-  font-size: 20px;
-  font-weight: 200;
-}
-.App .playlist .container div.txt .description p {
-  font-size: 20px;
-  margin: 0;
-  font-weight: 200;
-}
-.App .playlist .container div.txt .description strong {
-  font-weight: 500;
-}
-.App .playlist .container div.txt .description em {
-  font-weight: 400;
-}
-.App .playlist .container div.lecteur {
-  width: 34%;
-}
-.App .contact {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  height: 70vh;
+.App .newsletter .container .newsletter-form form {
   width: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: center;
 }
-.App .contact .container {
-  display: flex;
-  flex-direction: column;
-}
-.App .contact .container .title {
-  font-size: 72px;
-  margin-bottom: 90px;
+.App .newsletter .container .newsletter-form form .error-message {
+  color: red;
+  font-size: 12px;
   width: 100%;
-  height: 72px;
-  font-weight: 500;
+  text-align: center;
 }
-.App .contact .container > div {
-  display: flex;
-  flex-direction: row;
+.App .newsletter .container .newsletter-form form input {
+  transform: translateX(20px);
+  width: 500px;
+  padding: 15px 25px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border: 1px solid #e7e7e7;
+  font-size: 16px;
+  color: #666;
 }
-.App .contact .container > div .contact-form {
-  width: 50%;
+.App .newsletter .container .newsletter-form form input::placeholder {
+  color: #AAA;
 }
-.App .contact .container > div .contact-form form {
-  width: 80%;
-}
-.App .contact .container > div .contact-form form .inputs {
-  width: 100%;
-  margin-bottom: 15px;
-}
-.App .contact .container > div .contact-form form input, .App .contact .container > div .contact-form form textarea {
-  background-color: transparent;
-  border: 2px solid #F7F7F7;
-  border-radius: 5px;
-  padding: 5px 10px;
-  color: #F7F7F7;
-  font-family: "Poppins", sans-serif;
-}
-.App .contact .container > div .contact-form form input:focus, .App .contact .container > div .contact-form form textarea:focus {
+.App .newsletter .container .newsletter-form form input:focus {
   outline: none;
 }
-.App .contact .container > div .contact-form form .sujet {
-  width: 100%;
-  margin-bottom: 15px;
+.App .newsletter .container .newsletter-form form .btn {
+  transform: translateX(-20px);
+  max-height: 50px;
 }
-.App .contact .container > div .contact-form form .sujet > div {
-  width: 100%;
+.App footer.footer {
+  background: linear-gradient(0.1turn, #4270ED33, #FFFFFF);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0 0 0;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
 }
-.App .contact .container > div .contact-form form > div {
+.App footer.footer .container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.App .contact .container > div .contact-form form > div.textarea {
+.App footer.footer .container .logo {
+  max-width: 200px;
+}
+.App footer.footer .container .logo img {
+  width: 150px;
+}
+.App footer.footer .container .column .title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.App footer.footer .container .column ul {
+  list-style: none;
+  padding-left: 0;
+}
+.App footer.footer .container .column ul li {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+.App footer.footer .container .contact-form {
+  width: 35%;
+}
+.App footer.footer .container .contact-form form .error-message {
+  color: red;
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+}
+.App footer.footer .container .contact-form form .inputs {
+  width: 100%;
+  margin-bottom: 15px;
+}
+.App footer.footer .container .contact-form form input, .App footer.footer .container .contact-form form textarea {
+  background-color: transparent;
+  border: 1px solid #666;
+  border-radius: 30px;
+  padding: 5px 10px 5px 15px;
+  color: #171E49;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+.App footer.footer .container .contact-form form input::placeholder, .App footer.footer .container .contact-form form textarea::placeholder {
+  font-size: 14px;
+}
+.App footer.footer .container .contact-form form input:focus, .App footer.footer .container .contact-form form textarea:focus {
+  outline: none;
+}
+.App footer.footer .container .contact-form form .sujet {
+  width: 100%;
+  margin-bottom: 15px;
+}
+.App footer.footer .container .contact-form form .sujet > div {
+  width: 100%;
+}
+.App footer.footer .container .contact-form form > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.App footer.footer .container .contact-form form > div.textarea {
   flex-direction: column;
   margin-bottom: 15px;
 }
-.App .contact .container > div .contact-form form > div > div {
+.App footer.footer .container .contact-form form > div.textarea textarea {
+  border-radius: 20px;
+  padding-top: 15px;
+  height: 80px;
+}
+.App footer.footer .container .contact-form form > div > div {
   width: calc(50% - 5px);
   display: flex;
   flex-direction: column;
 }
-.App .contact .container > div .contact-form form button {
+.App footer.footer .container .contact-form form .btn {
   width: 100%;
-  padding: 8px;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: #F7F7F7;
-  background-color: #101010;
-  border: 2px solid #F7F7F7;
-  border-radius: 5px;
-  letter-spacing: 1px;
 }
-.App .contact .container > div .contact-form form button:hover {
-  cursor: pointer;
-  background-color: #F7F7F7;
-  color: #101010;
-}
-.App .contact .container > div .informations {
-  width: 50%;
-  padding-left: 30px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  font-weight: 200;
-}
-.App .contact .container > div .informations p {
-  margin: 0;
-}
-.App .contact .container > div .informations div {
-  display: flex;
+.App footer.footer .container:last-of-type {
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.App .contact .container > div .informations div .name_logo {
-  font-size: 28px;
-  line-height: 28px;
-  font-weight: 500;
-}
-.App .contact .container > div .informations div .at {
-  font-style: italic;
-  margin-bottom: 15px;
-}
-.App .contact .container > div .informations div .address {
-  font-size: 18px;
-  font-weight: 300;
-}
-.App .contact .container > div .informations div .telephone {
-  font-size: 18px;
-}
-.App .contact .container > div .informations div .telephone_2 {
-  font-size: 18px;
-}
-.App .contact .container > div .informations div .email {
-  margin-top: 18px;
-  font-size: 18px;
-  text-decoration: underline;
-}
-
-footer.footer {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-footer.footer > .container {
+.App footer.footer .container:last-of-type .reseaux-sociaux {
+  width: 250px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
-footer.footer > .container > div img.footer-logo {
-  height: 50px;
-  width: auto;
-}
-footer.footer > .container nav .footer-column .title {
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 30px;
-}
-footer.footer > .container nav .footer-column ul li {
-  margin-bottom: 15px;
-}
-footer.footer > .container .reseaux-sociaux .title {
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 30px;
-}
-footer.footer > .container .reseaux-sociaux ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-footer.footer > .container .reseaux-sociaux ul li img {
+.App footer.footer .container:last-of-type .reseaux-sociaux a img {
   height: 20px;
   width: auto;
-}
-footer.footer .copyright {
-  width: 100%;
-}
-footer.footer .copyright .container {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 50px;
-}
-footer.footer .copyright .container p {
-  font-size: 14px;
-  font-weight: 300;
+  filter: invert(1);
 }
 
 @media screen and (max-width: 425px) {

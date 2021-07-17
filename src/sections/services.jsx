@@ -17,13 +17,13 @@ class Services extends React.Component {
               <div className="container">
                 {this.state.services.map((service) =>
                     <div key={service.id} className="service">
-                      <div>
+                      <div className="image">
                         <img src={service.image.url} />
                       </div>
-                      <div>
+                      <div className="txt-content">
                         <h1 className="title">{service.title}</h1>
                         <Markdown options={{ wrapper: 'p', forceWrapper: true }} className="description">{service.description}</Markdown>
-                        <button>En savoir plus</button>
+                        <button className="btn">En savoir plus</button>
                       </div>
                     </div>
                 )}

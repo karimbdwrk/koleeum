@@ -19,10 +19,10 @@ class Prestations extends React.Component {
       return (
             <div className="prestations">
               <div className="container">
-                    <div>
+                    <div className="image">
                         <img src={this.state.image.url} />
                     </div>
-                    <div>
+                    <div className="txt-content">
                         <h2 className="title">{this.state.title}</h2>
                         <Markdown options={{ wrapper: 'p', forceWrapper: true }} className="description">{this.state.description}</Markdown>
                         <div className="prestas">
@@ -33,7 +33,7 @@ class Prestations extends React.Component {
                                 </div>
                                 <div className="txt">
                                     <h1 className="title">{card.title}</h1>
-                                    <Markdown options={{ wrapper: 'p', forceWrapper: true }} className="description">{card.description}</Markdown>
+                                    <Markdown options={{ wrapper: 'div', forceWrapper: true }} className="description">{card.description}</Markdown>
                                 </div>
                                 </div>
                             )}

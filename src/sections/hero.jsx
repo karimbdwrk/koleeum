@@ -18,12 +18,12 @@ class Hero extends React.Component {
       return (
             <div className="hero">
               <div className="container">
-                <div>
+                <div className="txt-content">
                   <h1 className="title">{this.state.title}</h1>
                   <Markdown className="description">{this.state.description}</Markdown>
-                  <button>{this.state.button.title}</button>
+                  <button className="btn">{this.state.button.title}</button>
                 </div>
-                <div>
+                <div className="image">
                   <img src={this.state.image.url} />
                 </div>
               </div>
