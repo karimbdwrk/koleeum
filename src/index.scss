@@ -1,7 +1,7 @@
 #wesh {
     .morray {
         display: block;
-    }
+    } 
 }
 
 /* VARIABLES */
@@ -9,6 +9,20 @@
 $dark-color: #171E49;
 
 /* ANIMATION */
+
+@keyframes wheel {
+	to {
+		opacity: 0;
+		top: 60px;
+	}
+}
+
+@-webkit-keyframes wheel {
+	to {
+		opacity: 0;
+		top: 60px;
+	}
+}
 
 /* Underline From Left */
 .hvr-underline-from-left {
@@ -83,11 +97,17 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    padding-top: 90px;
 
     header {
         display: flex;
         justify-content: center;
-        padding-top: 30px;
+        padding: 30px 0;
+        position: fixed;
+        top: 0;
+        z-index: 99;
+        width: 100vw;
+        background-color: #FFFFFF;
 
         .container {
             display: flex;
@@ -120,6 +140,7 @@ body {
                     font-weight: 500;
                     text-decoration: none;
                     cursor: pointer;
+                    color: $dark-color;
                 }
     
             }
@@ -137,11 +158,37 @@ body {
     .hero {
         display: flex;
         justify-content: center;
+        align-items: center;
+        flex-direction: column;
         padding: 90px 0;
 
         .container {
             display: flex;
             flex-direction: row;
+            justify-content: center;
+
+            .mouse {
+                margin: 50px 0;
+                width: 50px;
+                height: 90px;
+                border: 3px solid $dark-color;
+                border-radius: 60px;
+                position: relative;
+                &::before {
+                    content: '';
+                    width: 12px;
+                    height: 12px;
+                    position: absolute;
+                    top: 10px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background-color: $dark-color;
+                    border-radius: 50%;
+                    opacity: 1;
+                    animation: wheel 2s infinite;
+                    -webkit-animation: wheel 2s infinite;
+                }
+            }
 
             & > div {
                 width: 50%;
@@ -197,11 +244,13 @@ body {
         padding: 30px 0;
         display: flex;
         justify-content: center;
+        min-height: 80vh;
 
         .container {
             display: flex;
             justify-content: center;
             flex-direction: column;
+            align-items: center;
 
             p {
                 margin: 0;
@@ -216,6 +265,7 @@ body {
                 text-align: center;
                 font-size: 22px;
                 font-weight: 400;
+                width: 65%;
             }
     
             .cards {
@@ -234,6 +284,7 @@ body {
                     justify-content: center;
                     flex-direction: column;
                     align-items: center;
+                    width: 25%;
 
                     &:last-of-type {
                         margin-right: 0;
@@ -244,7 +295,7 @@ body {
                         // padding: 15px;
                         height: 60px;
                         width: 60px;
-                        margin-bottom: 20px;
+                        margin-bottom: 0px;
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -275,9 +326,10 @@ body {
     }
 
     .services {
-        padding: 30px 0;
+        padding: 90px 0;
         display: flex;
         justify-content: center;
+        min-height: 80vh;
 
         .container {
             display: flex;
@@ -313,6 +365,7 @@ body {
                 .txt-content {
                     width: 50%;
                     margin-top: 90px;
+                    padding: 0 30px;
                     .title {
                         font-size: 32px;
                         font-weight: 600;
@@ -329,9 +382,10 @@ body {
     }
 
     .prestations {
-        padding: 30px 0;
+        padding: 90px 0;
         display: flex;
         justify-content: center;
+        min-height: 80vh;
         .container {
             display: flex;
             flex-direction: row;
@@ -393,6 +447,9 @@ body {
                         .txt {
                             width: 70%;
                             padding-left: 30px;
+                            display: flex;
+                            align-items: center;
+                            
                             .title {
                                 font-size: 22px;
                                 font-weight: 500;
@@ -629,6 +686,24 @@ body {
 
 }
 
+/* BLOG MODAL POST */
+
+.modal {
+    .modal-dialog {
+        width: 100vw;
+        max-width: calc(100vw - 60px);
+        margin-top: 100px;
+        margin-bottom: 0;
+
+        .modal-content {
+            .modal-body {
+                height: calc(80vh - 100px);
+                max-height: calc(80vh - 100px);
+            }
+        }
+    }
+}
+
 
 @media screen and (max-width:425px) {
 
@@ -786,34 +861,6 @@ body {
             }
         }
 
-        .manifesto {
-            padding: 30px 0;
-            height: inherit;
-            display: flex;
-            justify-content: center;
-    
-            .container {
-    
-                .title {
-                    font-size: 38px;
-                    margin-bottom: 50px;
-                }
-    
-                .description {
-                    p {
-                        font-size: 16px;
-                    }
-                }
-        
-                .signature {
-                    font-family: 'Painted Brush';
-                    font-size: 42px;
-                }
-    
-            }
-
-        }
-
         .services {
     
             & > .container {
@@ -888,216 +935,6 @@ body {
                 }
             }
     
-        }
-
-        .playlist {
-            width: 100%;
-            padding-top: 30px;
-            padding-bottom: 30px;
-            height: inherit;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-    
-            .container {
-                display: flex;
-                flex-direction: column;
-    
-                div {
-                    &.txt {
-                        width: 100%;
-        
-                        .title {
-                            font-size: 38px;
-                            margin-bottom: 50px;
-                            margin-top: 0;
-                            width: 100%;
-                            font-weight: 500;
-                        }
-            
-                        .description {
-                            font-size: 22px;
-                            width: 100%;
-                            font-weight: 200;
-    
-                            li {
-                                list-style: none;
-                                font-size: 16px;
-                                font-weight: 200;
-                            }
-    
-                            p {
-                                font-size: 16px;
-                                margin: 0;
-                                font-weight: 200;
-                            }
-    
-                            strong {
-                                font-weight: 500;
-                            }
-            
-                            em {
-                                font-weight: 400;
-                            }
-                        }
-                    }
-        
-                    &.lecteur {
-                        margin-top: 50px;
-                        width: 100%;
-                    }
-                }
-    
-            }
-        }
-        
-        .contact {
-            padding-top: 30px;
-            padding-bottom: 30px;
-            height: 70vh;
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-    
-            .container {
-                display: flex;
-                flex-direction: column;
-    
-                .title {
-                    font-size: 36px;
-                    margin-bottom: 50px;
-                    width: 100%;
-                    height: 72px;
-                    font-weight: 500;
-                }
-    
-                & > div {
-                    display: flex;
-                    flex-direction: column;
-        
-                    .contact-form {
-                        width: 100%;
-        
-                        form {
-                            width: 100%;
-    
-                            .inputs {
-                                width: 100%;
-                                margin-bottom: 15px;
-                            }
-                
-                            input, textarea {
-                                background-color: transparent;
-                                border: 2px solid #F7F7F7;
-                                border-radius: 5px;
-                                padding: 5px 10px;
-                                color: #F7F7F7;
-                                font-family: 'Poppins', sans-serif;
-                
-                                &:focus {
-                                    outline: none;
-                                }
-                            }
-    
-                            .sujet {
-                                width: 100%;
-                                margin-bottom: 15px;
-    
-                                input {
-                                    width: 100%;
-                                }
-                            }
-                
-                            & > div {
-                                display: flex;
-                                flex-direction: row;
-                                justify-content: space-between;
-                
-                                &.textarea {
-                                    flex-direction: column;
-                                    margin-bottom: 15px;
-                                }
-                
-                                & > div {
-                                    width: calc(50% - 5px);
-                                    display: flex;
-                                    flex-direction: column;
-                                }
-                            }
-    
-                            button {
-                                width: 100%;
-                                padding: 8px;
-                                text-transform: uppercase;
-                                font-weight: 600;
-                                color: #F7F7F7;
-                                background-color: #101010;
-                                border: 2px solid #F7F7F7;
-                                border-radius: 5px;
-                                letter-spacing: 1px;
-    
-                                &:hover {
-                                    cursor: pointer;
-                                    background-color: #F7F7F7;
-                                    color: #101010;
-                                }
-                            }
-                        }
-        
-                    }
-        
-                    .informations {
-                        margin-top: 50px;
-                        width: 100%;
-                        padding-left: 0px;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-between;
-                        font-weight: 200;
-    
-                        p {
-                            margin: 0;
-                        }
-    
-                        div {
-                            display: flex;
-                            flex-direction: column;
-
-                            &:last-of-type {
-                                margin-top: 50px;
-                            }
-            
-                            .name_logo {
-                                font-size: 28px;
-                                line-height: 28px;
-                                font-weight: 500;
-                            }
-                            .at {
-                                font-style: italic;
-                                margin-bottom: 15px;
-                            }
-                            .address {
-                                font-size: 18px;
-                                font-weight: 300;
-                                margin-top: 15px;
-                            }
-                            .telephone {
-                                font-size: 18px;
-                            }
-                            .telephone_2 {
-                                font-size: 18px;
-                            }
-                            .email {
-                                margin-top: 18px;
-                                font-size: 18px;
-                                text-decoration: underline;
-                            }
-    
-                        }
-                    }
-                }
-            }
         }
     }
 }

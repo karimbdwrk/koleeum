@@ -24,7 +24,7 @@ class Prestations extends React.Component {
                     </div>
                     <div className="txt-content">
                         <h2 className="title">{this.state.title}</h2>
-                        <Markdown options={{ wrapper: 'p', forceWrapper: true }} className="description">{this.state.description}</Markdown>
+                        <Markdown options={{ wrapper: 'div', forceWrapper: true }} className="description">{this.state.description}</Markdown>
                         <div className="prestas">
                             {this.state.cards.map((card) =>
                                 <div key={card.id} className="presta">
@@ -32,8 +32,9 @@ class Prestations extends React.Component {
                                     <img src={card.icon.url} />
                                 </div>
                                 <div className="txt">
-                                    <h1 className="title">{card.title}</h1>
-                                    <Markdown options={{ wrapper: 'div', forceWrapper: true }} className="description">{card.description}</Markdown>
+                                    <h3 className="title">{card.title}</h3>
+                                    {/* {this.state.desscription && <Markdown options={{ wrapper: 'div', forceWrapper: true }} className="description">{card.description}</Markdown>} */}
+                                    {/* <Markdown options={{ wrapper: 'div', forceWrapper: true }} className="description">{card.description}</Markdown> */}
                                 </div>
                                 </div>
                             )}

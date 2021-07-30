@@ -20,12 +20,16 @@ class Hero extends React.Component {
               <div className="container">
                 <div className="txt-content">
                   <h1 className="title">{this.state.title}</h1>
-                  <Markdown className="description">{this.state.description}</Markdown>
+                  <Markdown options={{ wrapper: 'div', forceWrapper: true }} className="description">{this.state.description}</Markdown>
+                  {/* <div className="description">{this.state.description}</div> */}
                   <button className="btn">{this.state.button.title}</button>
                 </div>
                 <div className="image">
                   <img src={this.state.image.url} />
                 </div>
+              </div>
+              <div className="container">
+                <div className="mouse"></div>
               </div>
             </div>
           )

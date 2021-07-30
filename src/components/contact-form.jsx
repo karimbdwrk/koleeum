@@ -1,9 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Formik, Field, Form } from 'formik';
-import * as yup from 'yup'
-
-import emailjs from 'emailjs-com';
+import * as yup from 'yup';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 

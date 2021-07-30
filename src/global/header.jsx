@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-scroll'
+import { Link } from "react-router-dom";
 
-function handleClick(e) {
-    e.preventDefault();
-    console.log('Le lien a été cliqué.')
-}
+// function handleClick(e) {
+//     e.preventDefault();
+//     console.log('Le lien a été cliqué.')
+// }
 
 class Header extends React.Component {
     constructor(props) {
@@ -33,7 +33,8 @@ class Header extends React.Component {
           <header>
             <div className="container">
               <div className="logo">
-                  <img src={this.props.content.logo.url} />
+                  <Link to="/"><img src={this.props.content.logo.url} /></Link>
+                  
                   <button id="burger" onClick={this.handleClick} className={this.state.toggleOpen ? 'open' : ''}>
                     <span></span>
                     <span></span>
@@ -43,10 +44,10 @@ class Header extends React.Component {
               </div>
               <nav className={this.state.toggleOpen ? 'nav open' : 'nav'}>
                   { this.props.content.navigation.map((navlink, index) => {
-                  return (
-                        <Link key={index} to={navlink.link} spy={true} smooth={true} className="hvr-underline-from-left">{navlink.title}</Link>
+                    return (
+                        <Link key={index} to={navlink.link} className="hvr-underline-from-left">{navlink.title}</Link>
                       )
-                  }) 
+                    }) 
                   }
               </nav>
               <div className="my-account">

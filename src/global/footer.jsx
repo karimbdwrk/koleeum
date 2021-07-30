@@ -19,26 +19,26 @@ class Footer extends React.Component {
 
         return (
           <footer className="footer">
-            <div className="container">
+            <div key={0} className="container">
               <div className="logo">
                   <img src={this.state.footerInfo.logo.url} />
               </div>
-              {this.state.footerNav.map((column) => 
-                <div className="column">
+              {this.state.footerNav.map((column, index) => 
+                <div key={index} className="column">
                     <h3 className="title">{column.title}</h3>
                     <ul>
-                    {column.link.map((l) => 
-                        <li>{l.title}</li>
+                    {column.link.map((l, index) => 
+                        <li key={index}>{l.title}</li>
                     )}
                     </ul>
                 </div>
               )}
               <ContactForm />
             </div>
-            <div className="container">
+            <div key={1} className="container">
               <div className="reseaux-sociaux">
-                {this.state.socialNetworks.map((social) => 
-                    <a><img src={social.icon.url} /></a>
+                {this.state.socialNetworks.map((social, index) => 
+                    <a key={index}><img alt="alternate-txt" src={social.icon.url} /></a>
                 )}
               </div>
               <div className="copyright">

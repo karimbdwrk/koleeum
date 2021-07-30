@@ -4,6 +4,18 @@
 
 /* VARIABLES */
 /* ANIMATION */
+@keyframes wheel {
+  to {
+    opacity: 0;
+    top: 60px;
+  }
+}
+@-webkit-keyframes wheel {
+  to {
+    opacity: 0;
+    top: 60px;
+  }
+}
 /* Underline From Left */
 .hvr-underline-from-left {
   display: inline-block;
@@ -72,11 +84,17 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  padding-top: 90px;
 }
 .App header {
   display: flex;
   justify-content: center;
-  padding-top: 30px;
+  padding: 30px 0;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100vw;
+  background-color: #FFFFFF;
 }
 .App header .container {
   display: flex;
@@ -107,6 +125,7 @@ body {
   font-weight: 500;
   text-decoration: none;
   cursor: pointer;
+  color: #171E49;
 }
 .App header .container div.my-account {
   width: 20%;
@@ -117,11 +136,36 @@ body {
 .App .hero {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   padding: 90px 0;
 }
 .App .hero .container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+}
+.App .hero .container .mouse {
+  margin: 50px 0;
+  width: 50px;
+  height: 90px;
+  border: 3px solid #171E49;
+  border-radius: 60px;
+  position: relative;
+}
+.App .hero .container .mouse::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #171E49;
+  border-radius: 50%;
+  opacity: 1;
+  animation: wheel 2s infinite;
+  -webkit-animation: wheel 2s infinite;
 }
 .App .hero .container > div {
   width: 50%;
@@ -162,11 +206,13 @@ body {
   padding: 30px 0;
   display: flex;
   justify-content: center;
+  min-height: 80vh;
 }
 .App .expertises .container {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 .App .expertises .container p {
   margin: 0;
@@ -179,6 +225,7 @@ body {
   text-align: center;
   font-size: 22px;
   font-weight: 400;
+  width: 65%;
 }
 .App .expertises .container .cards {
   display: flex;
@@ -196,6 +243,7 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  width: 25%;
 }
 .App .expertises .container .cards .card:last-of-type {
   margin-right: 0;
@@ -204,7 +252,7 @@ body {
   border-radius: 50%;
   height: 60px;
   width: 60px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -225,9 +273,10 @@ body {
   font-weight: 400;
 }
 .App .services {
-  padding: 30px 0;
+  padding: 90px 0;
   display: flex;
   justify-content: center;
+  min-height: 80vh;
 }
 .App .services .container {
   display: flex;
@@ -257,6 +306,7 @@ body {
 .App .services .container .service .txt-content {
   width: 50%;
   margin-top: 90px;
+  padding: 0 30px;
 }
 .App .services .container .service .txt-content .title {
   font-size: 32px;
@@ -269,9 +319,10 @@ body {
   margin-bottom: 20px;
 }
 .App .prestations {
-  padding: 30px 0;
+  padding: 90px 0;
   display: flex;
   justify-content: center;
+  min-height: 80vh;
 }
 .App .prestations .container {
   display: flex;
@@ -327,6 +378,8 @@ body {
 .App .prestations .container .txt-content .prestas .presta .txt {
   width: 70%;
   padding-left: 30px;
+  display: flex;
+  align-items: center;
 }
 .App .prestations .container .txt-content .prestas .presta .txt .title {
   font-size: 22px;
@@ -509,6 +562,18 @@ body {
   filter: invert(1);
 }
 
+/* BLOG MODAL POST */
+.modal .modal-dialog {
+  width: 100vw;
+  max-width: calc(100vw - 60px);
+  margin-top: 100px;
+  margin-bottom: 0;
+}
+.modal .modal-dialog .modal-content .modal-body {
+  height: calc(80vh - 100px);
+  max-height: calc(80vh - 100px);
+}
+
 @media screen and (max-width: 425px) {
   .App {
     padding-left: 15px;
@@ -635,23 +700,6 @@ body {
   .App .hero .container .description {
     font-size: 32px;
   }
-  .App .manifesto {
-    padding: 30px 0;
-    height: inherit;
-    display: flex;
-    justify-content: center;
-  }
-  .App .manifesto .container .title {
-    font-size: 38px;
-    margin-bottom: 50px;
-  }
-  .App .manifesto .container .description p {
-    font-size: 16px;
-  }
-  .App .manifesto .container .signature {
-    font-family: "Painted Brush";
-    font-size: 42px;
-  }
   .App .services > .container > .title {
     font-size: 38px;
     margin-bottom: 50px;
@@ -703,179 +751,5 @@ body {
   }
   .App .services .skills .skill .txt-container .description em {
     font-weight: 400;
-  }
-  .App .playlist {
-    width: 100%;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    height: inherit;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  .App .playlist .container {
-    display: flex;
-    flex-direction: column;
-  }
-  .App .playlist .container div.txt {
-    width: 100%;
-  }
-  .App .playlist .container div.txt .title {
-    font-size: 38px;
-    margin-bottom: 50px;
-    margin-top: 0;
-    width: 100%;
-    font-weight: 500;
-  }
-  .App .playlist .container div.txt .description {
-    font-size: 22px;
-    width: 100%;
-    font-weight: 200;
-  }
-  .App .playlist .container div.txt .description li {
-    list-style: none;
-    font-size: 16px;
-    font-weight: 200;
-  }
-  .App .playlist .container div.txt .description p {
-    font-size: 16px;
-    margin: 0;
-    font-weight: 200;
-  }
-  .App .playlist .container div.txt .description strong {
-    font-weight: 500;
-  }
-  .App .playlist .container div.txt .description em {
-    font-weight: 400;
-  }
-  .App .playlist .container div.lecteur {
-    margin-top: 50px;
-    width: 100%;
-  }
-  .App .contact {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    height: 70vh;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  .App .contact .container {
-    display: flex;
-    flex-direction: column;
-  }
-  .App .contact .container .title {
-    font-size: 36px;
-    margin-bottom: 50px;
-    width: 100%;
-    height: 72px;
-    font-weight: 500;
-  }
-  .App .contact .container > div {
-    display: flex;
-    flex-direction: column;
-  }
-  .App .contact .container > div .contact-form {
-    width: 100%;
-  }
-  .App .contact .container > div .contact-form form {
-    width: 100%;
-  }
-  .App .contact .container > div .contact-form form .inputs {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-  .App .contact .container > div .contact-form form input, .App .contact .container > div .contact-form form textarea {
-    background-color: transparent;
-    border: 2px solid #F7F7F7;
-    border-radius: 5px;
-    padding: 5px 10px;
-    color: #F7F7F7;
-    font-family: "Poppins", sans-serif;
-  }
-  .App .contact .container > div .contact-form form input:focus, .App .contact .container > div .contact-form form textarea:focus {
-    outline: none;
-  }
-  .App .contact .container > div .contact-form form .sujet {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-  .App .contact .container > div .contact-form form .sujet input {
-    width: 100%;
-  }
-  .App .contact .container > div .contact-form form > div {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .App .contact .container > div .contact-form form > div.textarea {
-    flex-direction: column;
-    margin-bottom: 15px;
-  }
-  .App .contact .container > div .contact-form form > div > div {
-    width: calc(50% - 5px);
-    display: flex;
-    flex-direction: column;
-  }
-  .App .contact .container > div .contact-form form button {
-    width: 100%;
-    padding: 8px;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: #F7F7F7;
-    background-color: #101010;
-    border: 2px solid #F7F7F7;
-    border-radius: 5px;
-    letter-spacing: 1px;
-  }
-  .App .contact .container > div .contact-form form button:hover {
-    cursor: pointer;
-    background-color: #F7F7F7;
-    color: #101010;
-  }
-  .App .contact .container > div .informations {
-    margin-top: 50px;
-    width: 100%;
-    padding-left: 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    font-weight: 200;
-  }
-  .App .contact .container > div .informations p {
-    margin: 0;
-  }
-  .App .contact .container > div .informations div {
-    display: flex;
-    flex-direction: column;
-  }
-  .App .contact .container > div .informations div:last-of-type {
-    margin-top: 50px;
-  }
-  .App .contact .container > div .informations div .name_logo {
-    font-size: 28px;
-    line-height: 28px;
-    font-weight: 500;
-  }
-  .App .contact .container > div .informations div .at {
-    font-style: italic;
-    margin-bottom: 15px;
-  }
-  .App .contact .container > div .informations div .address {
-    font-size: 18px;
-    font-weight: 300;
-    margin-top: 15px;
-  }
-  .App .contact .container > div .informations div .telephone {
-    font-size: 18px;
-  }
-  .App .contact .container > div .informations div .telephone_2 {
-    font-size: 18px;
-  }
-  .App .contact .container > div .informations div .email {
-    margin-top: 18px;
-    font-size: 18px;
-    text-decoration: underline;
   }
 }

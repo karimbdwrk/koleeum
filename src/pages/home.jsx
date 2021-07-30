@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Hero from '../sections/hero'
 import Skills from '../sections/skills'
 import Services from '../sections/services'
 import Prestations from '../sections/prestations'
 import Newsletter from '../sections/newsletter'
-import Playlist from '../sections/playlist'
-import Contact from '../sections/contact'
 
 class Home extends React.Component {
     constructor(props) {
