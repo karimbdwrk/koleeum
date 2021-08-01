@@ -49,7 +49,7 @@ class Home extends React.Component {
             return <div>Chargement…</div>;
         } else {
           return (
-            <div className="home">
+            <div className="home fadeIn">
                 <Hero content={this.state.hero} />
                 <Skills content={this.state.expertises} />
                 <Services content={this.state.services} />

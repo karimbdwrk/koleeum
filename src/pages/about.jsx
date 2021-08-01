@@ -9,7 +9,7 @@ function About(props) {
         <Query query={ABOUT_PAGE_QUERY}>
             {({ data: { aboutUs } }) => {
                 return (
-                <div className="about-us">
+                <div className="about-us fadeIn">
                     <div className="container">
                         <h1 className="title">{aboutUs.title}</h1>
                         <div className="text-content">

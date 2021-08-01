@@ -9,7 +9,7 @@ function Proprietaires(props) {
         <Query query={PROPRIETAIRES_PAGE_QUERY}>
             {({ data: { proprietaire } }) => {
                 return (
-                <div className="proprietaires">
+                <div className="proprietaires fadeIn">
                     <div className="container">
                         <h1 className="title">{proprietaire.title}</h1>
                         <Markdown options={{ wrapper: 'p', forceWrapper: true }} className="description">{proprietaire.description}</Markdown>

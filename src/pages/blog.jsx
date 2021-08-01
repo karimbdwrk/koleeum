@@ -101,7 +101,7 @@ import BLOGPAGE_QUERY from "../queries/pages/blog";
 const Blog = () => {
 
   return (
-      <div className="blog">
+      <div className="blog fadeIn">
         <div className="container">
           <Query query={BLOGPAGE_QUERY}>
             {({ data: { blog } }) => {

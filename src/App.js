@@ -64,25 +64,27 @@ class App extends React.Component {
     if (error) {
         return <div>Erreur : {error.message}</div>;
     } else if (!isLoaded) {
-        return <div>Chargement…</div>;
+        return <div className="loading"><p>Chargement...</p></div>;
     } else {
       return (
         <div className="App">
           <Router>
             <Header content={this.state.header} />
-            <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/proprietaires" exact component={Proprietaires} />
-              <Redirect from="/post/proprietaires" to="/proprietaires" />
-              <Route path="/locataires" exact component={Locataires} />
-              <Redirect from="/post/locataires" to="/locataires" />
-              <Route path="/qui-sommes-nous" exact component={About} />
-              <Redirect from="/post/qui-sommes-nous" to="/qui-sommes-nous" />
-              <Route path="/blog" exact component={Blog} />
-              <Redirect from="/post/blog" to="/blog" />
-              {/* <Route path="/post/:id" component={Post} exact /> */}
-              <Route path="/post/:id" children={<Article />} />
-            </Switch>
+            <div className="layout fadeIn">
+              <Switch>
+                  <Route path="/" exact component={Home} />
+                  <Route path="/proprietaires" exact component={Proprietaires} />
+                  <Redirect from="/post/proprietaires" to="/proprietaires" />
+                  <Route path="/locataires" exact component={Locataires} />
+                  <Redirect from="/post/locataires" to="/locataires" />
+                  <Route path="/qui-sommes-nous" exact component={About} />
+                  <Redirect from="/post/qui-sommes-nous" to="/qui-sommes-nous" />
+                  <Route path="/blog" exact component={Blog} />
+                  <Redirect from="/post/blog" to="/blog" />
+                  {/* <Route path="/post/:id" component={Post} exact /> */}
+                  <Route path="/post/:id" children={<Article />} />
+              </Switch>
+            </div>
             <Footer footerInfo={this.state.footerInfo} footerNav={this.state.footerNav} socialNetworks={this.state.socialNetworks} />
             <CookieConsent
               location="bottom"

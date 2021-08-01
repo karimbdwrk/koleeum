@@ -16,6 +16,48 @@
     top: 60px;
   }
 }
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  animation-duration: 1000ms;
+}
+
+/* LOADING */
+.loading {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.loading img {
+  height: 120px;
+  width: 120px;
+}
+.loading p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  color: #BBBBBB;
+}
+
 /* Underline From Left */
 .hvr-underline-from-left {
   display: inline-block;
@@ -85,6 +127,7 @@ body {
   justify-content: center;
   flex-direction: column;
   padding-top: 90px;
+  min-height: 100vh;
 }
 .App header {
   display: flex;
@@ -132,6 +175,9 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+.App .layout {
+  min-height: 100vh;
 }
 .App .hero {
   display: flex;
@@ -999,13 +1045,17 @@ body {
 
 @media screen and (max-width: 425px) {
   .App {
-    padding-left: 15px;
-    padding-right: 15px;
+    overflow-x: hidden;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0;
   }
   .App header {
     display: flex;
     justify-content: center;
-    padding-top: 30px;
+    padding: 15px;
+    background-color: #FFF;
+    width: calc(100% - 30px);
   }
   .App header .container {
     display: flex;
@@ -1014,8 +1064,7 @@ body {
   }
   .App header .container .logo {
     width: 100%;
-    padding-bottom: 30px;
-    background-color: #101010;
+    padding-bottom: 0px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -1048,7 +1097,7 @@ body {
     position: absolute;
     height: 3px;
     width: 100%;
-    background: #f7f7f7;
+    background: #171E49;
     border-radius: 2px;
     opacity: 1;
     left: 0;
@@ -1096,83 +1145,192 @@ body {
     width: 100%;
     max-width: 800px;
     display: flex;
-    flex-direction: row;
-    align-items: flex-end;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: space-around;
     transform: translateY(-30px);
     opacity: 0;
     transition: 250ms ease-in-out;
+    pointer-events: none;
+    height: 0px;
   }
   .App header .container .nav.open {
+    padding-top: 30px;
     transform: translateY(0px);
     opacity: 1;
+    height: 200px;
+    pointer-events: auto;
   }
   .App header .container .nav a {
     vertical-align: bottom;
     font-size: 18px;
     border-bottom: 0px solid transparent;
-    color: #F7F7F7;
+    color: #171E49;
     text-decoration: none;
   }
   .App header .container .nav a:hover {
     border-bottom: 0px solid #F7F7F7;
   }
-  .App .hero {
+  .App header .container .my-account {
+    display: none !important;
+  }
+  .App .layout {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .App .layout .hero {
     padding: 20vh 0 10vh;
   }
-  .App .hero .container .description {
-    font-size: 32px;
+  .App .layout .hero .container {
+    flex-direction: column;
   }
-  .App .services > .container > .title {
-    font-size: 38px;
-    margin-bottom: 50px;
-  }
-  .App .services > .container > .description {
-    font-size: 16px;
-  }
-  .App .services .skills {
-    padding: 30px 0;
-    height: 100vh;
+  .App .layout .hero .container > div {
     width: 100%;
   }
-  .App .services .skills .skill {
-    display: flex;
-    margin-bottom: 60px;
-  }
-  .App .services .skills .skill .icon-container {
-    width: 10%;
-  }
-  .App .services .skills .skill .icon-container img.icon {
-    max-height: 50px;
-    width: auto;
-  }
-  .App .services .skills .skill .txt-container {
-    width: 90%;
-    padding-left: 30px;
-  }
-  .App .services .skills .skill .txt-container h3 {
-    margin-top: 0;
-    margin-bottom: 15px;
+  .App .layout .hero .container > div.txt-content .title {
     font-size: 24px;
-    font-weight: 500;
+    margin-top: 0;
   }
-  .App .services .skills .skill .txt-container .description {
+  .App .layout .hero .container > div.txt-content .description {
+    font-size: 18px;
+  }
+  .App .layout .hero .container > div.image img {
+    width: 66%;
+  }
+  .App .layout .hero .container > div.mouse {
+    display: none;
+  }
+  .App .layout .expertises .container .title {
+    font-size: 24px;
+    text-align: left;
+  }
+  .App .layout .expertises .container .description {
+    font-size: 18px;
+    text-align: left;
+    width: 100%;
+  }
+  .App .layout .expertises .container .cards {
+    flex-direction: column;
+  }
+  .App .layout .expertises .container .cards .card {
+    width: 90%;
+    margin-bottom: 30px;
+    height: 245px;
+  }
+  .App .layout .expertises .container .cards .card .description {
+    font-size: 16px;
+  }
+  .App .layout .services .container .service {
+    flex-direction: column;
+  }
+  .App .layout .services .container .service:nth-of-type(2n) div:first-of-type {
+    order: 1;
+  }
+  .App .layout .services .container .service:nth-of-type(2n) div:last-of-type {
+    order: 1;
+  }
+  .App .layout .services .container .service > div {
+    width: 100%;
+  }
+  .App .layout .services .container .service > div.txt-content {
     padding-left: 0;
   }
-  .App .services .skills .skill .txt-container .description li {
-    list-style: none;
-    font-size: 14px;
-    font-weight: 200;
+  .App .layout .services .container .service > div.txt-content .title {
+    font-size: 24px;
+    margin-top: 0;
   }
-  .App .services .skills .skill .txt-container .description p {
-    font-size: 14px;
-    margin: 0;
-    font-weight: 200;
+  .App .layout .services .container .service > div.txt-content .description {
+    font-size: 18px;
   }
-  .App .services .skills .skill .txt-container .description strong {
-    font-weight: 500;
+  .App .layout .services .container .service > div.image img {
+    width: 66%;
   }
-  .App .services .skills .skill .txt-container .description em {
-    font-weight: 400;
+  .App .layout .services .container .service > div.mouse {
+    display: none;
+  }
+  .App .layout .prestations .container {
+    flex-direction: column;
+  }
+  .App .layout .prestations .container > .image {
+    width: 100%;
+    max-height: 300px;
+  }
+  .App .layout .prestations .container > .txt-content {
+    width: 100%;
+    margin-top: 30px;
+  }
+  .App .layout .prestations .container > .txt-content .title {
+    font-size: 24px;
+    margin-top: 0;
+  }
+  .App .layout .prestations .container > .txt-content .description {
+    font-size: 18px;
+  }
+  .App .layout .prestations .container > .txt-content .prestas {
+    padding-top: 30px;
+  }
+  .App .layout .prestations .container > .txt-content .prestas .presta .txt h3 {
+    font-size: 18px;
+  }
+  .App .layout .newsletter .container {
+    width: calc(100% - 30px);
+    padding: 30px 15px;
+  }
+  .App .layout .newsletter .container .title {
+    font-size: 24px;
+    margin-top: 0;
+  }
+  .App .layout .newsletter .container .description {
+    font-size: 18px;
+  }
+  .App .layout .newsletter .container .newsletter-form form {
+    flex-direction: column;
+  }
+  .App .layout .newsletter .container .newsletter-form form div {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  .App .layout .newsletter .container .newsletter-form form div input {
+    width: calc(100% - 60px);
+    transform: translateX(0);
+    border-radius: 30px;
+  }
+  .App .layout .newsletter .container .newsletter-form form button.btn {
+    width: 100%;
+    transform: translateX(0);
+  }
+  .App footer.footer {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .App footer.footer .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .App footer.footer .container .logo {
+    margin-bottom: 30px;
+  }
+  .App footer.footer .container .column {
+    margin-bottom: 30px;
+  }
+  .App footer.footer .container .contact-form {
+    width: 100%;
+    margin-bottom: 90px;
+  }
+  .App .CookieConsent {
+    display: flex;
+    flex-direction: column;
+  }
+  .App .CookieConsent > div:first-of-type {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 30px !important;
+    justify-content: space-between;
+  }
+  .App .CookieConsent > div:first-of-type a {
+    color: #FFF;
+    margin: 15px 0;
   }
 }

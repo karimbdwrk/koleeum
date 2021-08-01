@@ -9,7 +9,7 @@ function Locataires(props) {
         <Query query={LOCATAIRES_PAGE_QUERY}>
             {({ data: { locataire } }) => {
                 return (
-                <div className="locataires">
+                <div className="locataires fadeIn">
                     <div className="container">
                         <h1 className="title">{locataire.title}</h1>
                         <Markdown options={{ wrapper: 'p', forceWrapper: true }} className="description">{locataire.description}</Markdown>
