@@ -4,7 +4,7 @@ import Card from "../card/card";
 const Posts = ({ posts }) => {
 
   return (
-    <div>
+    <div className="cards">
         {posts.map((post, index) => 
             <Card key={index} post={post}></Card>
         )}

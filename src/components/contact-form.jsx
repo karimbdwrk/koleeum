@@ -67,6 +67,7 @@ const ContactForm = () => (
       {({ errors,
           touched,
           isSubmitting,
+          isValid,
       }) => (
         <Form id="contactForm">
             <div className="inputs">
@@ -89,8 +90,8 @@ const ContactForm = () => (
                 <Field name="message" placeholder="Message *" as="textarea" />
                 {errors.message && touched.message ? <div className="error-message">{errors.message}</div> : null}
             </div>
-            <button className="btn" type="submit" disabled={isSubmitting ? 'disabled' : ''}>
-                Submit
+            <button className="btn" type="submit" disabled={isValid ? '' : 'disabled'}>
+                {isValid ? 'Envoyer' : 'Veuillez corriger'}
             </button>
         </Form>
       )}

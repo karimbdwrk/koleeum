@@ -51,23 +51,14 @@ const Post = () => {
               : process.env.REACT_APP_BACKEND_URL + posts[0].image.url;
 
           return (
-            <div>
-              <div
-                id="banner"
-                className="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding uk-margin"
-                data-src={imageUrl}
-                data-srcset={imageUrl}
-                data-uk-img
-              >
-                <h1>{posts[0].title}</h1>
-              </div>
-
-              <div className="uk-section">
-                <div className="uk-container uk-container-small">
+            <div className="post">
+              <div className="container">
+                <h1 className="title">{posts[0].title}</h1>
+                <div className="content">
                   <Markdown>{posts[0].content}</Markdown>
-                  {/* <div>{posts[0].content}</div> */}
-                  <p>
-                    <Moment format="MMM Do YYYY">{posts[0].published_at}</Moment>
+                  <p className="post-date">
+                    Publié le :&nbsp;
+                    <Moment format="DD/MM/YYYY">{posts[0].published_at}</Moment>
                   </p>
                 </div>
               </div>

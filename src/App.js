@@ -3,16 +3,21 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Link,
   Redirect
 } from "react-router-dom";
+import CookieConsent from "react-cookie-consent";
 import Header from './global/header'
 import Footer from './global/footer'
 import Home from './pages/home'
+import Locataires from './pages/locataires';
 import Blog from './pages/blog'
 import Article from "./components/post/post";
 // import logo from './logo.svg';
 
 import './App.css';
+import Proprietaires from './pages/proprietaires';
+import About from './pages/about';
 
 class App extends React.Component {
   constructor(props) {
@@ -67,12 +72,31 @@ class App extends React.Component {
             <Header content={this.state.header} />
             <Switch>
               <Route path="/" exact component={Home} />
+              <Route path="/proprietaires" exact component={Proprietaires} />
+              <Redirect from="/post/proprietaires" to="/proprietaires" />
+              <Route path="/locataires" exact component={Locataires} />
+              <Redirect from="/post/locataires" to="/locataires" />
+              <Route path="/qui-sommes-nous" exact component={About} />
+              <Redirect from="/post/qui-sommes-nous" to="/qui-sommes-nous" />
               <Route path="/blog" exact component={Blog} />
               <Redirect from="/post/blog" to="/blog" />
               {/* <Route path="/post/:id" component={Post} exact /> */}
               <Route path="/post/:id" children={<Article />} />
             </Switch>
             <Footer footerInfo={this.state.footerInfo} footerNav={this.state.footerNav} socialNetworks={this.state.socialNetworks} />
+            <CookieConsent
+              location="bottom"
+              buttonText="J'accepte"
+              cookieName="myRGPDCookie"
+              style={{ background: "#4270ED" }}
+              buttonStyle={{ backgroundColor: "#FFF", color: "#4270ED", fontSize: "16px", borderRadius: "20px", padding: "5px 25px" }}
+              expires={150}
+              debug={true}
+              className="cookie-consent"
+            >
+              <p>This website uses cookies to enhance the user experience.</p>
+              <Link to='#'>En savoir plus</Link>
+            </CookieConsent>
           </Router>
         </div>
       );

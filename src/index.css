@@ -188,7 +188,7 @@ body {
   font-weight: 300;
 }
 .App .hero .container > div.txt-content .description strong {
-  font-weight: 500;
+  font-weight: 600;
 }
 .App .hero .container > div.txt-content .description em {
   font-weight: 400;
@@ -238,12 +238,11 @@ body {
   border-radius: 30px;
   padding: 30px 15px;
   height: 300px;
-  margin-right: 60px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: 25%;
+  width: 20%;
 }
 .App .expertises .container .cards .card:last-of-type {
   margin-right: 0;
@@ -302,10 +301,11 @@ body {
 }
 .App .services .container .service .image img {
   max-height: 500px;
+  width: 100%;
 }
 .App .services .container .service .txt-content {
   width: 50%;
-  margin-top: 90px;
+  margin-top: 5%;
   padding: 0 30px;
 }
 .App .services .container .service .txt-content .title {
@@ -561,17 +561,440 @@ body {
   width: auto;
   filter: invert(1);
 }
-
-/* BLOG MODAL POST */
-.modal .modal-dialog {
-  width: 100vw;
-  max-width: calc(100vw - 60px);
-  margin-top: 100px;
+.App .proprietaires {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 90px 0;
+}
+.App .proprietaires .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.App .proprietaires .container > .title {
+  font-size: 42px;
+  text-align: center;
+}
+.App .proprietaires .container > .description {
+  font-size: 18px;
+  text-align: center;
+  width: 66%;
+}
+.App .proprietaires .container .sections {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 90px 0;
+}
+.App .proprietaires .container .sections .section {
+  margin-top: 90px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.App .proprietaires .container .sections .section:nth-of-type(2n) div:first-of-type {
+  order: 2;
+}
+.App .proprietaires .container .sections .section:nth-of-type(2n) div:last-of-type {
+  order: 1;
+}
+.App .proprietaires .container .sections .section .image {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+}
+.App .proprietaires .container .sections .section .image img {
+  max-height: 500px;
+  width: 100%;
+}
+.App .proprietaires .container .sections .section .txt-content {
+  width: 50%;
+  margin-top: 3%;
+  padding: 0 30px;
+}
+.App .proprietaires .container .sections .section .txt-content .title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.App .proprietaires .container .sections .section .txt-content .description {
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.App .proprietaires .container .garanties {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 90px 0;
+}
+.App .proprietaires .container .garanties .title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+.App .proprietaires .container .garanties .description {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 50px;
+}
+.App .proprietaires .container .garanties .logos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 66%;
+}
+.App .locataires {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 90px 0;
+}
+.App .locataires .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.App .locataires .container > .title {
+  font-size: 42px;
+  text-align: center;
+}
+.App .locataires .container > .description {
+  font-size: 18px;
+  text-align: center;
+  width: 66%;
+}
+.App .locataires .container > .sections {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.App .locataires .container > .sections .section {
+  margin-top: 90px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.App .locataires .container > .sections .section:nth-of-type(2n) div:first-of-type {
+  order: 2;
+}
+.App .locataires .container > .sections .section:nth-of-type(2n) div:last-of-type {
+  order: 1;
+}
+.App .locataires .container > .sections .section .image {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+}
+.App .locataires .container > .sections .section .image img {
+  max-height: 500px;
+  width: 100%;
+}
+.App .locataires .container > .sections .section .txt-content {
+  width: 50%;
+  margin-top: 3%;
+  padding: 0 30px;
+}
+.App .locataires .container > .sections .section .txt-content .title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.App .locataires .container > .sections .section .txt-content .description {
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.App .locataires .container .choose-us {
+  padding: 90px 0;
+  display: flex;
+  justify-content: center;
+  min-height: 80vh;
+}
+.App .locataires .container .choose-us .container {
+  display: flex;
+  flex-direction: row;
+}
+.App .locataires .container .choose-us .container .image {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+.App .locataires .container .choose-us .container .image img {
+  max-height: 600px;
+}
+.App .locataires .container .choose-us .container .text-content {
+  width: 50%;
+  margin-top: 90px;
+}
+.App .locataires .container .choose-us .container .text-content > .title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.App .locataires .container .choose-us .container .text-content > .description {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.App .locataires .container .choose-us .container .text-content > .description p {
+  margin: 0;
+}
+.App .locataires .container .choose-us .container .text-content .sections {
+  display: flex;
+  flex-direction: column;
+}
+.App .locataires .container .choose-us .container .text-content .sections .section {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.App .locataires .container .choose-us .container .text-content .sections .section .icon {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 5px #00000022;
+}
+.App .locataires .container .choose-us .container .text-content .sections .section .icon img {
+  height: 30px;
+  width: auto;
+}
+.App .locataires .container .choose-us .container .text-content .sections .section .txt-content {
+  width: 70%;
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+}
+.App .locataires .container .choose-us .container .text-content .sections .section .txt-content .title {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0;
+}
+.App .locataires .container .choose-us .container .text-content .sections .section .txt-content .description {
+  font-size: 20px;
+}
+.App .about-us {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 90px 0;
+}
+.App .about-us .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.App .about-us .container > .title {
+  font-size: 42px;
+  text-align: center;
+}
+.App .about-us .container > .text-content .paragraphe {
+  font-size: 18px;
+}
+.App .about-us .container .image {
+  width: 100%;
+}
+.App .about-us .container .image img {
+  width: 100%;
+}
+.App .about-us .container .infos {
+  margin-top: 90px;
+}
+.App .about-us .container .infos .title {
+  text-align: center;
+}
+.App .about-us .container .infos .contact-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 500px;
+}
+.App .blog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 90px 0;
+}
+.App .blog .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.App .blog .container > .title {
+  font-size: 42px;
+  text-align: center;
   margin-bottom: 0;
 }
-.modal .modal-dialog .modal-content .modal-body {
-  height: calc(80vh - 100px);
-  max-height: calc(80vh - 100px);
+.App .blog .container > .description {
+  font-size: 18px;
+  text-align: center;
+  width: 66%;
+  margin-bottom: 90px;
+}
+.App .blog .container .cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 32% 32% 32%;
+  grid-gap: 2%;
+}
+.App .blog .container .cards .card {
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.App .blog .container .cards .card .card-thumbnail img {
+  width: 100%;
+}
+.App .blog .container .cards .card .card-txt {
+  padding: 15px 15px 30px;
+}
+.App .blog .container .cards .card .card-txt .link {
+  color: #171E49;
+}
+.App .post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 90px 0;
+}
+.App .post .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+}
+.App .post .container > .title {
+  font-size: 42px;
+  margin-bottom: 50px;
+}
+.App .post .container .content {
+  padding-right: 90px;
+}
+.App .post .container .content #titre {
+  margin-top: 50px;
+}
+.App .post .container .content p {
+  font-weight: 300;
+}
+.App .post .container .content p em {
+  font-weight: 500;
+}
+.App .post .container .content p strong {
+  font-weight: 600;
+}
+.App .post .container .content p img {
+  width: 66%;
+}
+.App .post .container .post-date {
+  text-align: right;
+}
+.App .registration {
+  margin-top: 90px;
+  margin-bottom: 90px;
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.App .registration .container {
+  padding: 50px;
+  border: 1px solid #eee;
+  border-radius: 30px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.App .registration .container .title {
+  text-align: center;
+  font-size: 42px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.App .registration .container .description {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 50px;
+}
+.App .registration .container .description p {
+  margin: 0;
+}
+.App .registration .container .registration-form {
+  display: flex;
+  justify-content: center;
+}
+.App .registration .container .registration-form > div {
+  width: 100%;
+}
+.App .registration .container .registration-form form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.App .registration .container .registration-form form .error-message {
+  color: red;
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+}
+.App .registration .container .registration-form form input {
+  transform: translateX(20px);
+  width: 250px;
+  padding: 15px 25px;
+  border-radius: 30px;
+  border: 1px solid #e7e7e7;
+  font-size: 16px;
+  color: #666;
+  margin-left: 15px;
+}
+.App .registration .container .registration-form form input::placeholder {
+  color: #AAA;
+}
+.App .registration .container .registration-form form input:focus {
+  outline: none;
+}
+.App .registration .container .registration-form form .btn {
+  transform: translateX(-20px);
+  max-height: 50px;
+}
+.App .registration .container .registration-form form .btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.CookieConsent {
+  display: flex;
+  flex-direction: row;
+}
+.CookieConsent > div:first-of-type {
+  display: flex;
+  flex-direction: row;
+  flex: 1 0 80%;
+  justify-content: space-between;
+}
+.CookieConsent > div:first-of-type a {
+  color: #FFF;
+  margin: 15px 0;
 }
 
 @media screen and (max-width: 425px) {

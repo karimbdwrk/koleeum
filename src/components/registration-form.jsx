@@ -5,7 +5,7 @@ import * as yup from 'yup';
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const resetForm = () => {
-    const form = document.getElementById('NewsletterForm')
+    const form = document.getElementById('RegistrationForm')
     setTimeout(() => {
       form.querySelectorAll('input').forEach(element => element.value = '')
     }, 500)
@@ -13,13 +13,17 @@ const resetForm = () => {
 }
 
 const validationSchema = yup.object().shape({
+    name: yup.string()
+        .min(2, 'Too Short!')
+        .max(50, 'Too Long!')
+        .required('Required'),
     email: yup.string()
         .email('invalid email')
         .required('Required'),
 })
 
-const NewsletterForm = () => (
-  <div>
+const RegistrationForm = () => (
+  <div className="registration-form">
     <Formik
       initialValues={{
         email: '',
@@ -28,12 +32,13 @@ const NewsletterForm = () => (
       onSubmit={async (values, { setSubmitting, setErrors }) => {
         await sleep(500);
         console.log(JSON.stringify(values, null, 2));
-        fetch('https://koleeum-admin.herokuapp.com/newsletters', {
+        fetch('https://koleeum-admin.herokuapp.com/registrations', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
+                name: values.name,
                 email: values.email,
 
             }),
@@ -49,13 +54,17 @@ const NewsletterForm = () => (
           isSubmitting,
           isValid,
       }) => (
-        <Form id="NewsletterForm">
+        <Form id="RegistrationForm">
+            <div>
+              <Field name="name" placeholder="Mon nom *" type="text" />
+              {errors.name && touched.name ? <div className="error-message">{errors.name}</div> : null}
+            </div>
             <div>
               <Field name="email" placeholder="Mon adresse email *" type="email" />
-              {/* {errors.email && touched.email ? <div className="error-message">{errors.email}</div> : null} */}
+              {errors.email && touched.email ? <div className="error-message">{errors.email}</div> : null}
             </div>
             <button className="btn" type="submit" disabled={isValid ? '' : 'disabled'}>
-                {isValid ? 'Envoyer' : 'Email invalide'}
+                {isValid ? 'Envoyer' : 'Veuillez corriger'}
             </button>
         </Form>
       )}
@@ -63,4 +72,4 @@ const NewsletterForm = () => (
   </div>
 )
 
-export default NewsletterForm
+export default RegistrationForm
