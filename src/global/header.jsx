@@ -45,7 +45,7 @@ class Header extends React.Component {
               <nav className={this.state.toggleOpen ? 'nav open' : 'nav'}>
                   { this.props.content.navigation.map((navlink, index) => {
                     return (
-                        <Link key={index} to={navlink.link} className="hvr-underline-from-left">{navlink.title}</Link>
+                        <Link key={index} to={navlink.link} className="hvr-underline-from-left" onClick={this.handleClick}>{navlink.title}</Link>
                       )
                     }) 
                   }
