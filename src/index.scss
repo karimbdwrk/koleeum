@@ -831,12 +831,26 @@ body {
                     font-size: 18px;
                     font-weight: 400;
                     margin-bottom: 50px;
+                    width: 66%;
                 }
                 .logos {
                     display: flex;
                     flex-direction: row;
                     justify-content: space-evenly;
                     width: 66%;
+
+                    .logo {
+                        max-height: 120px;
+                        height: auto;
+                        display: flex;
+                        justify-content: center;
+                        width: 200px;
+
+                        img {
+                            max-height: 100%;
+                            width: auto;
+                        }
+                    }
                 }
             }
         }
@@ -1437,7 +1451,7 @@ body {
             padding-right: 15px;
 
             .hero {
-                padding: 20vh 0 10vh;
+                padding: 120px 0 15vh;
         
                 .container {
                     flex-direction: column;
@@ -1488,11 +1502,20 @@ body {
 
                     .cards {
                         flex-direction: column;
+                        margin-top: 30px;
 
                         .card {
                             width: 90%;
-                            margin-bottom: 30px;
-                            height: 245px;
+                            padding: 15px;
+                            margin-bottom: 15px;
+                            height: inherit;
+                            border: 0px;
+                            align-items: flex-start;
+
+                            .title {
+                                width: 100%;
+                                text-align: left;
+                            }
 
                             .description {
                                 font-size: 16px;
@@ -1503,6 +1526,7 @@ body {
             }
 
             .services {
+                padding: 0;
                 .container {
                     .service {
                         flex-direction: column;
@@ -1552,6 +1576,7 @@ body {
             }
 
             .prestations {
+                padding: 50px 0;
                 .container {
                     flex-direction: column;
                     & > .image {
@@ -1610,7 +1635,7 @@ body {
                                 margin-bottom: 15px;
 
                                 input {
-                                    width: calc(100% - 60px);
+                                    width: calc(100% - 50px);
                                     transform: translateX(0);
                                     border-radius: 30px;
                                 }

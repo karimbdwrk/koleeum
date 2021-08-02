@@ -688,12 +688,24 @@ body {
   font-size: 18px;
   font-weight: 400;
   margin-bottom: 50px;
+  width: 66%;
 }
 .App .proprietaires .container .garanties .logos {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   width: 66%;
+}
+.App .proprietaires .container .garanties .logos .logo {
+  max-height: 120px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  width: 200px;
+}
+.App .proprietaires .container .garanties .logos .logo img {
+  max-height: 100%;
+  width: auto;
 }
 .App .locataires {
   display: flex;
@@ -1179,7 +1191,7 @@ body {
     padding-right: 15px;
   }
   .App .layout .hero {
-    padding: 20vh 0 10vh;
+    padding: 120px 0 15vh;
   }
   .App .layout .hero .container {
     flex-direction: column;
@@ -1211,14 +1223,25 @@ body {
   }
   .App .layout .expertises .container .cards {
     flex-direction: column;
+    margin-top: 30px;
   }
   .App .layout .expertises .container .cards .card {
     width: 90%;
-    margin-bottom: 30px;
-    height: 245px;
+    padding: 15px;
+    margin-bottom: 15px;
+    height: inherit;
+    border: 0px;
+    align-items: flex-start;
+  }
+  .App .layout .expertises .container .cards .card .title {
+    width: 100%;
+    text-align: left;
   }
   .App .layout .expertises .container .cards .card .description {
     font-size: 16px;
+  }
+  .App .layout .services {
+    padding: 0;
   }
   .App .layout .services .container .service {
     flex-direction: column;
@@ -1247,6 +1270,9 @@ body {
   }
   .App .layout .services .container .service > div.mouse {
     display: none;
+  }
+  .App .layout .prestations {
+    padding: 50px 0;
   }
   .App .layout .prestations .container {
     flex-direction: column;
@@ -1293,7 +1319,7 @@ body {
     margin-bottom: 15px;
   }
   .App .layout .newsletter .container .newsletter-form form div input {
-    width: calc(100% - 60px);
+    width: calc(100% - 50px);
     transform: translateX(0);
     border-radius: 30px;
   }

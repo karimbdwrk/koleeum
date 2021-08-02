@@ -93,7 +93,7 @@ class App extends React.Component {
               style={{ background: "#4270ED" }}
               buttonStyle={{ backgroundColor: "#FFF", color: "#4270ED", fontSize: "16px", borderRadius: "20px", padding: "5px 25px" }}
               expires={150}
-              debug={true}
+              debug={false}
               className="cookie-consent"
             >
               <p>This website uses cookies to enhance the user experience.</p>
