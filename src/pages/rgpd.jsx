@@ -11,7 +11,7 @@ function Rgpd(props) {
                 <div className="rgpd fadeIn">
                     <div className="container">
                         <h1 className="title">{rgpd.title}</h1>
-                        <Markdown options={{ wrapper: 'p', forceWrapper: true }} className="text-content">{rgpd.content}</Markdown>
+                        <Markdown options={{ wrapper: 'div', forceWrapper: true }} className="text-content">{rgpd.content}</Markdown>
                     </div>
                 </div>
                 );

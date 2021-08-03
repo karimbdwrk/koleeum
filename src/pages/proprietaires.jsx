@@ -12,7 +12,7 @@ function Proprietaires(props) {
                 <div className="proprietaires fadeIn">
                     <div className="container">
                         <h1 className="title">{proprietaire.title}</h1>
-                        <Markdown options={{ wrapper: 'p', forceWrapper: true }} className="description">{proprietaire.description}</Markdown>
+                        <Markdown options={{ wrapper: 'div', forceWrapper: true }} className="description">{proprietaire.description}</Markdown>
                         <div className="sections">
                             {proprietaire.page_section.map((section) =>
                                 <div key={section.id} className="section">
@@ -21,14 +21,14 @@ function Proprietaires(props) {
                                     </div>
                                     <div className="txt-content">
                                         <h1 className="title">{section.title}</h1>
-                                        <Markdown options={{ wrapper: 'p', forceWrapper: true }} className="description">{section.description}</Markdown>
+                                        <Markdown options={{ wrapper: 'div', forceWrapper: true }} className="description">{section.description}</Markdown>
                                     </div>
                                 </div>
                             )}
                         </div>
                         <div className="garanties">
                             <h2 className="title">{proprietaire.garanties.title}</h2>
-                            <Markdown options={{ wrapper: 'p', forceWrapper: true }} className="description">{proprietaire.garanties.description}</Markdown>
+                            <Markdown options={{ wrapper: 'div', forceWrapper: true }} className="description">{proprietaire.garanties.description}</Markdown>
                             <div className="logos">
                                 {proprietaire.garanties.logos.map((logo) =>
                                     <div className="logo">
@@ -44,14 +44,14 @@ function Proprietaires(props) {
                                 </div>
                                 <div className="txt-content">
                                     <h2 className="title">{proprietaire.last_section.title}</h2>
-                                    <Markdown options={{ wrapper: 'p', forceWrapper: true }} className="description">{proprietaire.last_section.description}</Markdown>
+                                    <Markdown options={{ wrapper: 'div', forceWrapper: true }} className="description">{proprietaire.last_section.description}</Markdown>
                                 </div>
                             </div>
                         </div>
                         <div className="registration">
                             <div className="container">
                                 <h2 className="title">{proprietaire.registration.title}</h2>
-                                <Markdown options={{ wrapper: 'p', forceWrapper: true }} className="description">{proprietaire.registration.description}</Markdown>
+                                <Markdown options={{ wrapper: 'div', forceWrapper: true }} className="description">{proprietaire.registration.description}</Markdown>
                                 <RegistrationForm />
                             </div>
                         </div>

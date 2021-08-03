@@ -11,7 +11,7 @@ function Legal(props) {
                 <div className="legal fadeIn">
                     <div className="container">
                         <h1 className="title">{legal.title}</h1>
-                        <Markdown options={{ wrapper: 'p', forceWrapper: true }} className="text-content">{legal.content}</Markdown>
+                        <Markdown options={{ wrapper: 'div', forceWrapper: true }} className="text-content">{legal.content}</Markdown>
                     </div>
                 </div>
                 );

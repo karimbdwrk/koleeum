@@ -12,7 +12,7 @@ function Locataires(props) {
                 <div className="locataires fadeIn">
                     <div className="container">
                         <h1 className="title">{locataire.title}</h1>
-                        <Markdown options={{ wrapper: 'p', forceWrapper: true }} className="description">{locataire.description}</Markdown>
+                        <Markdown options={{ wrapper: 'div', forceWrapper: true }} className="description">{locataire.description}</Markdown>
                         <div className="sections">
                             {locataire.page_sections.map((section) =>
                                 <div key={section.id} className="section">
@@ -21,7 +21,7 @@ function Locataires(props) {
                                     </div>
                                     <div className="txt-content">
                                         <h1 className="title">{section.title}</h1>
-                                        <Markdown options={{ wrapper: 'p', forceWrapper: true }} className="description">{section.description}</Markdown>
+                                        <Markdown options={{ wrapper: 'div', forceWrapper: true }} className="description">{section.description}</Markdown>
                                     </div>
                                 </div>
                             )}
@@ -33,7 +33,7 @@ function Locataires(props) {
                                 </div>
                                 <div className="text-content">
                                     <h2 className="title">{locataire.choose_us.title}</h2>
-                                    <Markdown options={{ wrapper: 'p', forceWrapper: true }} className="description">{locataire.choose_us.description}</Markdown>
+                                    <Markdown options={{ wrapper: 'div', forceWrapper: true }} className="description">{locataire.choose_us.description}</Markdown>
                                     <div className="sections">
                                         {locataire.choose_us.card.map((card) =>
                                             <div key={card.id} className="section">
@@ -52,7 +52,7 @@ function Locataires(props) {
                         <div className="registration">
                             <div className="container">
                                 <h2 className="title">{locataire.registration.title}</h2>
-                                <Markdown options={{ wrapper: 'p', forceWrapper: true }} className="description">{locataire.registration.description}</Markdown>
+                                <Markdown options={{ wrapper: 'div', forceWrapper: true }} className="description">{locataire.registration.description}</Markdown>
                                 <RegistrationForm />
                             </div>
                         </div>

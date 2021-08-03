@@ -67,7 +67,7 @@ class App extends React.Component {
     if (error) {
         return <div>Erreur : {error.message}</div>;
     } else if (!isLoaded) {
-        return <div className="loading"><div class="lds-dual-ring"></div></div>;
+        return <div className="loading"><div className="lds-dual-ring"></div></div>;
     } else {
       return (
         <div className="App">
