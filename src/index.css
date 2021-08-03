@@ -1329,6 +1329,10 @@ body {
     width: 100%;
     transform: translateX(0);
   }
+  .App .layout .blog .container .cards {
+    display: flex;
+    flex-direction: column;
+  }
   .App .layout .registration .container {
     width: calc(100% - 30px);
     padding: 30px 15px;

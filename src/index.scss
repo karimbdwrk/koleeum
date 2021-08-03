@@ -1651,6 +1651,15 @@ body {
                 }
             }
 
+            .blog {
+                .container {
+                    .cards {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+            }
+
             .registration {
                 .container {
                     width: calc(100% - 30px);
