@@ -13,6 +13,10 @@ class Footer extends React.Component {
       };
     }
 
+    linkClick() {
+      window.scrollTo(0, 0);
+    }
+
   
     render() {
 
@@ -34,7 +38,7 @@ class Footer extends React.Component {
                     { column.link.map((l, index) => {
                       return (
                           <li key={index}>
-                            <Link key={index} to={l.link} className="hvr-underline-from-left">{l.title}</Link>
+                            <Link key={index} to={l.link} className="hvr-underline-from-left" onClick={this.linkClick}>{l.title}</Link>
                           </li>
                         )
                       }) 

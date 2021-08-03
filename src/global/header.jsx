@@ -44,7 +44,6 @@ class Header extends React.Component {
             <div className="container">
               <div className="logo">
                   <Link to="/" onClick={this.linkClick}><img src={this.props.content.logo.url} /></Link>
-                  
                   <button id="burger" onClick={this.handleClick} className={this.state.toggleOpen ? 'open' : ''}>
                     <span></span>
                     <span></span>

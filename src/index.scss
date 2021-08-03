@@ -69,6 +69,31 @@ $dark-color: #171E49;
         font-size: 28px;
         color: #BBBBBB;
     }
+    
+    .lds-dual-ring {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+    }
+    .lds-dual-ring:after {
+        content: " ";
+        display: block;
+        width: 64px;
+        height: 64px;
+        margin: 8px;
+        border-radius: 50%;
+        border: 6px solid $dark-color;
+        border-color: $dark-color transparent $dark-color transparent;
+        animation: lds-dual-ring 1.2s linear infinite;
+    }
+    @keyframes lds-dual-ring {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+    }
 }
 
 /* Underline From Left */
@@ -90,7 +115,7 @@ $dark-color: #171E49;
       right: 100%;
       bottom: 0;
       background: $dark-color;
-      height: 3px;
+      height: 2px;
       -webkit-transition-property: right;
       transition-property: right;
       -webkit-transition-duration: 0.3s;
@@ -636,6 +661,16 @@ body {
                     li {
                         font-size: 16px;
                         margin-bottom: 15px;
+
+                        a {
+                            text-decoration: none;
+                            padding-bottom: 5px;
+                            color: $dark-color;
+
+                            &::before {
+                                height: 2px;
+                            }
+                        }
                     }
                 }
             }
@@ -1267,10 +1302,88 @@ body {
                 }
             }
         }
-
     }
 
+    // PAGE MENTIONS LÉGALES
+
+    .legal {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 90px 0;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            & > .title {
+                font-size: 42px;
+                text-align: center;
+            }
+
+            & > .text-content {
+                font-size: 18px;
+            }
+        }
+    }
+
+    // PAGE HONORAIRES
+
+    .honoraires {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 90px 0;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            & > .title {
+                font-size: 42px;
+                text-align: center;
+            }
+
+            & > .text-content {
+                font-size: 18px;
+            }
+        }
+    }
+
+    // PAGE RGPD
+
+    .rgpd {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 90px 0;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            & > .title {
+                font-size: 42px;
+                text-align: center;
+            }
+
+            & > .text-content {
+                font-size: 18px;
+            }
+        }
+    }
 }
+
+
 
 .CookieConsent {
     display: flex;
