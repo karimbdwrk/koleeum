@@ -2,6 +2,10 @@
   display: block;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* VARIABLES */
 /* ANIMATION */
 @keyframes wheel {
@@ -57,6 +61,30 @@
   font-size: 28px;
   color: #BBBBBB;
 }
+.loading .lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.loading .lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #171E49;
+  border-color: #171E49 transparent #171E49 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 /* Underline From Left */
 .hvr-underline-from-left {
@@ -77,7 +105,7 @@
   right: 100%;
   bottom: 0;
   background: #171E49;
-  height: 3px;
+  height: 2px;
   -webkit-transition-property: right;
   transition-property: right;
   -webkit-transition-duration: 0.3s;
@@ -533,6 +561,14 @@ body {
 .App footer.footer .container .column ul li {
   font-size: 16px;
   margin-bottom: 15px;
+}
+.App footer.footer .container .column ul li a {
+  text-decoration: none;
+  padding-bottom: 5px;
+  color: #171E49;
+}
+.App footer.footer .container .column ul li a::before {
+  height: 2px;
 }
 .App footer.footer .container .contact-form {
   width: 35%;
@@ -1039,6 +1075,66 @@ body {
   opacity: 0.7;
   cursor: not-allowed;
 }
+.App .legal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 90px 0;
+}
+.App .legal .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.App .legal .container > .title {
+  font-size: 42px;
+  text-align: center;
+}
+.App .legal .container > .text-content {
+  font-size: 18px;
+}
+.App .honoraires {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 90px 0;
+}
+.App .honoraires .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.App .honoraires .container > .title {
+  font-size: 42px;
+  text-align: center;
+}
+.App .honoraires .container > .text-content {
+  font-size: 18px;
+}
+.App .rgpd {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 90px 0;
+}
+.App .rgpd .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.App .rgpd .container > .title {
+  font-size: 42px;
+  text-align: center;
+}
+.App .rgpd .container > .text-content {
+  font-size: 18px;
+}
 
 .CookieConsent {
   display: flex;
@@ -1328,6 +1424,10 @@ body {
   .App .layout .newsletter .container .newsletter-form form button.btn {
     width: 100%;
     transform: translateX(0);
+  }
+  .App .layout .blog .container .cards {
+    display: flex;
+    flex-direction: column;
   }
   .App .layout .registration .container {
     width: calc(100% - 30px);

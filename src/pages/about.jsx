@@ -15,7 +15,7 @@ function About(props) {
                         <div className="text-content">
                             {aboutUs.text_content.map((paragraphe) =>
                                 <div key={paragraphe.id} className="paragraphe">
-                                    <Markdown options={{ wrapper: 'p', forceWrapper: true }}>{paragraphe.text}</Markdown>
+                                    <Markdown options={{ wrapper: 'div', forceWrapper: true }}>{paragraphe.text}</Markdown>
                                 </div>
                             )}
                         </div>
@@ -32,7 +32,7 @@ function About(props) {
                         <div className="registration">
                             <div className="container">
                                 <h2 className="title">{aboutUs.registration.title}</h2>
-                                <Markdown options={{ wrapper: 'p', forceWrapper: true }} className="description">{aboutUs.registration.description}</Markdown>
+                                <Markdown options={{ wrapper: 'div', forceWrapper: true }} className="description">{aboutUs.registration.description}</Markdown>
                                 <RegistrationForm />
                             </div>
                         </div>

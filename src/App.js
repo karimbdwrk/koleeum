@@ -11,6 +11,9 @@ import Header from './global/header'
 import Footer from './global/footer'
 import Home from './pages/home'
 import Locataires from './pages/locataires';
+import Rgpd from './pages/rgpd'
+import Legal from './pages/legal'
+import Honoraires from './pages/honoraires'
 import Blog from './pages/blog'
 import Article from "./components/post/post";
 // import logo from './logo.svg';
@@ -64,7 +67,7 @@ class App extends React.Component {
     if (error) {
         return <div>Erreur : {error.message}</div>;
     } else if (!isLoaded) {
-        return <div className="loading"><p>Chargement...</p></div>;
+        return <div className="loading"><div className="lds-dual-ring"></div></div>;
     } else {
       return (
         <div className="App">
@@ -79,6 +82,12 @@ class App extends React.Component {
                   <Redirect from="/post/locataires" to="/locataires" />
                   <Route path="/qui-sommes-nous" exact component={About} />
                   <Redirect from="/post/qui-sommes-nous" to="/qui-sommes-nous" />
+                  <Route path="/rgpd" exact component={Rgpd} />
+                  <Redirect from="/post/rgpd" to="/rgpd" />
+                  <Route path="/mentions-legales" exact component={Legal} />
+                  <Redirect from="/post/mentions-legales" to="/mentions-legales" />
+                  <Route path="/honoraires" exact component={Honoraires} />
+                  <Redirect from="/post/honoraires" to="/honoraires" />
                   <Route path="/blog" exact component={Blog} />
                   <Redirect from="/post/blog" to="/blog" />
                   {/* <Route path="/post/:id" component={Post} exact /> */}

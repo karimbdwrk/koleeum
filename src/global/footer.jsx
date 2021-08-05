@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import ContactForm from '../components/contact-form';
 
 class Footer extends React.Component {
@@ -10,6 +11,10 @@ class Footer extends React.Component {
         footerNav: this.props.footerNav,
         socialNetworks: this.props.socialNetworks
       };
+    }
+
+    linkClick() {
+      window.scrollTo(0, 0);
     }
 
   
@@ -27,9 +32,17 @@ class Footer extends React.Component {
                 <div key={index} className="column">
                     <h3 className="title">{column.title}</h3>
                     <ul>
-                    {column.link.map((l, index) => 
+                    {/* {column.link.map((l, index) => 
                         <li key={index}>{l.title}</li>
-                    )}
+                    )} */}
+                    { column.link.map((l, index) => {
+                      return (
+                          <li key={index}>
+                            <Link key={index} to={l.link} className="hvr-underline-from-left" onClick={this.linkClick}>{l.title}</Link>
+                          </li>
+                        )
+                      }) 
+                    }
                     </ul>
                 </div>
               )}
