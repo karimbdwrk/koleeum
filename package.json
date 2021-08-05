@@ -11,9 +11,12 @@
     "apollo-boost": "^0.4.9",
     "bootstrap": "^4.6.0",
     "emailjs-com": "^3.1.0",
+    "express": "^4.17.1",
     "formik": "^2.2.9",
+    "gh-pages": "^3.2.3",
     "graphql": "^15.5.1",
     "markdown-to-jsx": "^7.1.3",
+    "path": "^0.12.7",
     "react": "^17.0.2",
     "react-apollo": "^3.1.5",
     "react-bootstrap": "^1.6.1",
@@ -55,5 +58,7 @@
   "engines": {
     "node": ">=10.x <14.x",
     "npm": "7.x"
-  }
+  },
+  "proxy": "https://koleeum.fr:80",
+  "homepage": "https://koleeum.fr/build"
 }
