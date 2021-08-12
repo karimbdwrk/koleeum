@@ -33,7 +33,7 @@ const validationSchema = yup.object().shape({
 
 const ContactForm = () => (
   <div className="contact-form">
-    <h3>Contactez-nous</h3>
+    <h3 className="title">Contactez-nous</h3>
     <Formik
       initialValues={{
         name: '',
