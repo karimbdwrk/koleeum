@@ -109,14 +109,26 @@ const EvaluationForm = ({type}) => (
             </Field> */}
             <Field id="evaluationType" name="type" placeholder="Type *" type="text" value={type}/>
             <div className="my-informations">
-                <Field name="lastname" placeholder="Mon nom *" type="text" />
-                {errors.lastname && touched.lastname ? <div className="error-message">{errors.lastname}</div> : null}
-                <Field name="name" placeholder="Mon prénom *" type="text" />
-                {errors.name && touched.name ? <div className="error-message">{errors.name}</div> : null}
-                <Field name="email" placeholder="Mon adresse email *" type="email" />
-                {errors.email && touched.email ? <div className="error-message">{errors.email}</div> : null}
-                <Field name="telephone" placeholder="Téléphone *" type="text" />
-                {errors.telephone && touched.telephone ? <div className="error-message">Veuillez entrer un numéro de téléphone valide</div> : null}
+                <div className="identity">
+                    <div>
+                        <Field name="lastname" placeholder="Mon nom *" type="text" />
+                        {errors.lastname && touched.lastname ? <div className="error-message">{errors.lastname}</div> : null}
+                    </div>
+                    <div>
+                        <Field name="name" placeholder="Mon prénom *" type="text" />
+                        {errors.name && touched.name ? <div className="error-message">{errors.name}</div> : null}
+                    </div>
+                </div>
+                <div className="contact">
+                    <div>
+                        <Field name="email" placeholder="Mon adresse email *" type="email" />
+                        {errors.email && touched.email ? <div className="error-message">{errors.email}</div> : null}
+                    </div>
+                    <div>
+                        <Field name="telephone" placeholder="Téléphone *" type="text" />
+                        {errors.telephone && touched.telephone ? <div className="error-message">Veuillez entrer un numéro de téléphone valide</div> : null}
+                    </div>
+                </div>
             </div>
             <div className="my-options">
                 <Field className="objectif" name="objectif" component="select">

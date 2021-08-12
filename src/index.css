@@ -1317,6 +1317,14 @@ body {
 .App .evaluation .container .evaluation-form form {
   display: none;
 }
+.App .evaluation .container .evaluation-form form .identity, .App .evaluation .container .evaluation-form form .contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.App .evaluation .container .evaluation-form form .identity > div, .App .evaluation .container .evaluation-form form .contact > div {
+  width: calc(50% - 15px);
+}
 .App .evaluation .container .evaluation-form.investissement form {
   display: flex;
 }
@@ -1400,6 +1408,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   min-height: 120px;
+  min-width: 100%;
 }
 .App .evaluation .container .evaluation-form form select {
   -webkit-appearance: none;
