@@ -827,7 +827,6 @@ body {
 .App .proprietaires .container .garanties .description {
   font-size: 18px;
   font-weight: 400;
-  margin-bottom: 50px;
   width: 66%;
 }
 .App .proprietaires .container .garanties .logos {
@@ -837,7 +836,7 @@ body {
   width: 66%;
 }
 .App .proprietaires .container .garanties .logos .logo {
-  max-height: 120px;
+  max-height: 180px;
   height: auto;
   display: flex;
   justify-content: center;
