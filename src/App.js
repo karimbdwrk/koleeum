@@ -21,6 +21,7 @@ import Article from "./components/post/post";
 import './App.css';
 import Proprietaires from './pages/proprietaires';
 import About from './pages/about';
+import Evaluation from './pages/evaluation';
 
 class App extends React.Component {
   constructor(props) {
@@ -92,6 +93,7 @@ class App extends React.Component {
                   <Redirect from="/post/blog" to="/blog" />
                   {/* <Route path="/post/:id" component={Post} exact /> */}
                   <Route path="/post/:id" children={<Article />} />
+                  <Route path="/evaluation" exact component={Evaluation} />
               </Switch>
             </div>
             <Footer footerInfo={this.state.footerInfo} footerNav={this.state.footerNav} socialNetworks={this.state.socialNetworks} />

@@ -60,7 +60,7 @@ class Header extends React.Component {
                   }
               </nav>
               <div className="my-account">
-                  <button className="btn">{this.props.content.button.title}</button>
+                  <Link to={this.props.content.button.link} className="btn">{this.props.content.button.title}</Link>
               </div>
             </div>
           </header>

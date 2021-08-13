@@ -5,6 +5,24 @@ const PROPRIETAIRES_PAGE_QUERY = gql`
         proprietaire {
             title
             description
+            Call_to_action {
+              title
+              link
+            }
+            first_section {
+              id
+              title 
+              description 
+              image {
+                url
+              }
+              cards{
+                title
+                icon {
+                  url
+                }
+              }
+            }
             page_section {
                 id
                 title

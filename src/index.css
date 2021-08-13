@@ -1,7 +1,12 @@
 #wesh .morray {
-  display: block;
+  display: none;
 }
 
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* END RESET CSS */
 html {
   scroll-behavior: smooth;
 }
@@ -40,6 +45,29 @@ html {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
   animation-duration: 1000ms;
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
 }
 
 /* LOADING */
@@ -121,6 +149,45 @@ html {
 .container {
   max-width: 1400px;
   width: 100%;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: #4270ED;
+  color: #FFFFFF;
+  border: 0;
+  border-radius: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 30px;
+  width: -moz-fit-content;
+  width: fit-content;
+  box-shadow: 2px 2px 5px #00000022;
+  text-decoration: none;
+}
+
+form {
+  font-family: "Montserrat", sans-serif;
+}
+form input {
+  font-family: "Montserrat", sans-serif;
+}
+form select {
+  font-family: "Montserrat", sans-serif;
+}
+form select option {
+  font-family: "Montserrat", sans-serif;
+}
+
+@media screen and (max-width: 1400px) {
+  .container {
+    max-width: 1350px;
+    width: calc(100vw - 30px);
+  }
+}
+.d-none {
+  display: none !important;
 }
 
 button.btn {
@@ -684,29 +751,66 @@ body {
 .App .proprietaires .container .sections .section:nth-of-type(2n) div:last-of-type {
   order: 1;
 }
-.App .proprietaires .container .sections .section .image {
+.App .proprietaires .container .sections .section > .image {
   width: 30%;
   display: flex;
   justify-content: center;
 }
-.App .proprietaires .container .sections .section .image img {
+.App .proprietaires .container .sections .section > .image img {
   max-height: 500px;
   width: 100%;
 }
-.App .proprietaires .container .sections .section .txt-content {
+.App .proprietaires .container .sections .section > .txt-content {
   width: 50%;
   margin-top: 3%;
   padding: 0 30px;
 }
-.App .proprietaires .container .sections .section .txt-content .title {
+.App .proprietaires .container .sections .section > .txt-content .title {
   font-size: 32px;
   font-weight: 600;
   margin-bottom: 20px;
 }
-.App .proprietaires .container .sections .section .txt-content .description {
+.App .proprietaires .container .sections .section > .txt-content .description {
   font-size: 22px;
   font-weight: 400;
   margin-bottom: 20px;
+}
+.App .proprietaires .container .sections .section > .txt-content .cards {
+  display: flex;
+  flex-direction: column;
+}
+.App .proprietaires .container .sections .section > .txt-content .cards .card {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.App .proprietaires .container .sections .section > .txt-content .cards .card .icon {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 5px #00000022;
+}
+.App .proprietaires .container .sections .section > .txt-content .cards .card .icon img {
+  height: 30px;
+  width: auto;
+}
+.App .proprietaires .container .sections .section > .txt-content .cards .card .txt-content {
+  width: 70%;
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+}
+.App .proprietaires .container .sections .section > .txt-content .cards .card .txt-content .title {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0;
+}
+.App .proprietaires .container .sections .section > .txt-content .cards .card .txt-content .description {
+  font-size: 20px;
 }
 .App .proprietaires .container .garanties {
   display: flex;
@@ -723,7 +827,6 @@ body {
 .App .proprietaires .container .garanties .description {
   font-size: 18px;
   font-weight: 400;
-  margin-bottom: 50px;
   width: 66%;
 }
 .App .proprietaires .container .garanties .logos {
@@ -733,7 +836,7 @@ body {
   width: 66%;
 }
 .App .proprietaires .container .garanties .logos .logo {
-  max-height: 120px;
+  max-height: 180px;
   height: auto;
   display: flex;
   justify-content: center;
@@ -953,8 +1056,13 @@ body {
   border-radius: 30px;
   overflow: hidden;
 }
+.App .blog .container .cards .card .card-thumbnail {
+  display: flex;
+  justify-content: center;
+}
 .App .blog .container .cards .card .card-thumbnail img {
-  width: 100%;
+  width: auto;
+  height: 300px;
 }
 .App .blog .container .cards .card .card-txt {
   padding: 15px 15px 30px;
@@ -1134,6 +1242,180 @@ body {
 }
 .App .rgpd .container > .text-content {
   font-size: 18px;
+}
+.App .evaluation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 90px 0;
+}
+.App .evaluation .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.App .evaluation .container > .title {
+  font-size: 42px;
+  text-align: center;
+}
+.App .evaluation .container > .description {
+  font-size: 18px;
+  width: 66%;
+}
+.App .evaluation .container .cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 66%;
+  margin-top: 90px;
+}
+.App .evaluation .container .cards.fadeOut {
+  animation-duration: 250ms;
+}
+.App .evaluation .container .cards .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+  max-width: 30%;
+  border: 1px solid #eee;
+  border-radius: 30px;
+  padding: 30px;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+}
+.App .evaluation .container .cards .card:hover {
+  box-shadow: 5px 5px 15px #00000010;
+  transition: box-shadow 250ms ease;
+  cursor: pointer;
+}
+.App .evaluation .container .cards .card img {
+  max-height: 215px;
+  width: auto;
+}
+.App .evaluation .container .cards .card h2 {
+  text-align: center;
+  font-size: 20px;
+}
+.App .evaluation .container .evaluation-form {
+  opacity: 0;
+}
+.App .evaluation .container .evaluation-form.fadeIn {
+  animation-delay: 750ms;
+  animation-fill-mode: forwards;
+}
+.App .evaluation .container .evaluation-form #evaluationType {
+  visibility: hidden;
+}
+.App .evaluation .container .evaluation-form form {
+  display: none;
+}
+.App .evaluation .container .evaluation-form form .identity, .App .evaluation .container .evaluation-form form .contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.App .evaluation .container .evaluation-form form .identity > div, .App .evaluation .container .evaluation-form form .contact > div {
+  width: calc(50% - 15px);
+}
+.App .evaluation .container .evaluation-form.investissement form {
+  display: flex;
+}
+.App .evaluation .container .evaluation-form.investissement form .my-options .projet {
+  display: none;
+}
+.App .evaluation .container .evaluation-form.investissement form .occupe {
+  display: none;
+}
+.App .evaluation .container .evaluation-form.investissement form .estimation {
+  display: none;
+}
+.App .evaluation .container .evaluation-form.vente form {
+  display: flex;
+}
+.App .evaluation .container .evaluation-form.vente form .budget {
+  display: none;
+}
+.App .evaluation .container .evaluation-form.vente form .my-options .objectif {
+  display: none;
+}
+.App .evaluation .container .evaluation-form.vente form .my-options .projet {
+  display: none;
+}
+.App .evaluation .container .evaluation-form.gestion_locative form {
+  display: flex;
+}
+.App .evaluation .container .evaluation-form.gestion_locative form .budget {
+  display: none;
+}
+.App .evaluation .container .evaluation-form.gestion_locative form .my-options .objectif {
+  display: none;
+}
+.App .evaluation .container .evaluation-form.gestion_locative form .my-options .projet {
+  display: none;
+}
+.App .evaluation .container .evaluation-form.gestion_locative form .estimation {
+  display: none;
+}
+.App .evaluation .container .evaluation-form form {
+  flex-direction: column;
+  width: 66vw;
+  max-width: 600px;
+}
+.App .evaluation .container .evaluation-form form .my-informations {
+  display: flex;
+  flex-direction: column;
+}
+.App .evaluation .container .evaluation-form form .my-options {
+  display: flex;
+  flex-direction: column;
+}
+.App .evaluation .container .evaluation-form form .error-message {
+  color: red;
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+}
+.App .evaluation .container .evaluation-form form input, .App .evaluation .container .evaluation-form form select, .App .evaluation .container .evaluation-form form textarea {
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  padding: 15px 25px;
+  border-radius: 30px;
+  border: 1px solid #e7e7e7;
+  font-size: 16px;
+  color: #666;
+  margin: 15px 0;
+}
+.App .evaluation .container .evaluation-form form input::placeholder, .App .evaluation .container .evaluation-form form select::placeholder, .App .evaluation .container .evaluation-form form textarea::placeholder {
+  color: #AAA;
+}
+.App .evaluation .container .evaluation-form form input:focus, .App .evaluation .container .evaluation-form form select:focus, .App .evaluation .container .evaluation-form form textarea:focus {
+  outline: none;
+}
+.App .evaluation .container .evaluation-form form textarea {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  min-height: 120px;
+  min-width: 100%;
+}
+.App .evaluation .container .evaluation-form form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%);
+  background-position: calc(100% - 30px) calc(1em + 5px), calc(100% - 25px) calc(1em + 5px), calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
 }
 
 .CookieConsent {
