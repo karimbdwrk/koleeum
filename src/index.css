@@ -1274,6 +1274,7 @@ body {
 .App .evaluation .container > .description {
   font-size: 18px;
   width: 66%;
+  text-align: center;
 }
 .App .evaluation .container .cards {
   display: flex;
@@ -1890,6 +1891,38 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  .App .evaluation .container > .title {
+    width: 100%;
+    text-align: left;
+    font-size: 28px;
+  }
+  .App .evaluation .container > .description {
+    width: 100%;
+  }
+  .App .evaluation .container .cards {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .App .evaluation .container .cards .card {
+    width: 100%;
+    max-width: 80%;
+    margin-bottom: 15px;
+  }
+  .App .evaluation .container .evaluation-form form {
+    width: 100%;
+  }
+  .App .evaluation .container .evaluation-form form .contact, .App .evaluation .container .evaluation-form form .identity {
+    flex-direction: column;
+  }
+  .App .evaluation .container .evaluation-form form .contact div, .App .evaluation .container .evaluation-form form .identity div {
+    width: 100%;
+  }
+  .App .evaluation .container .evaluation-form form .btn {
+    width: 100%;
   }
   .App footer.footer {
     padding-left: 15px;
