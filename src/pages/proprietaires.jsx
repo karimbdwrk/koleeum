@@ -33,7 +33,8 @@ function Proprietaires(props) {
                                                     <img src={card.icon.url} />
                                                 </div>
                                                 <div className="txt-content">
-                                                    <h1 className="title">{card.title}</h1>
+                                                    <h2 className="title">{card.title}</h2>
+                                                    <Markdown options={{ wrapper: 'div', forceWrapper: true }} className="description">{card.description}</Markdown>
                                                 </div>
                                             </div>
                                         )}
@@ -46,7 +47,7 @@ function Proprietaires(props) {
                                         <img src={section.image.url} />
                                     </div>
                                     <div className="txt-content">
-                                        <h1 className="title">{section.title}</h1>
+                                        <h2 className="title">{section.title}</h2>
                                         <Markdown options={{ wrapper: 'div', forceWrapper: true }} className="description">{section.description}</Markdown>
                                     </div>
                                 </div>

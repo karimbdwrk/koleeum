@@ -1,3 +1,6 @@
+#wesh {
+  display: flex;
+}
 #wesh .morray {
   display: none;
 }
@@ -776,12 +779,12 @@ body {
   margin-top: 3%;
   padding: 0 30px;
 }
-.App .proprietaires .container .sections .section > .txt-content .title {
+.App .proprietaires .container .sections .section > .txt-content > .title {
   font-size: 32px;
   font-weight: 600;
   margin-bottom: 20px;
 }
-.App .proprietaires .container .sections .section > .txt-content .description {
+.App .proprietaires .container .sections .section > .txt-content > .description {
   font-size: 22px;
   font-weight: 400;
   margin-bottom: 20px;
@@ -793,8 +796,10 @@ body {
 .App .proprietaires .container .sections .section > .txt-content .cards .card {
   margin-bottom: 30px;
   display: flex;
-  flex-direction: row;
-  width: 100%;
+  flex-direction: column;
+  border: 1px solid #f0f0f0;
+  padding: 30px;
+  border-radius: 30px;
 }
 .App .proprietaires .container .sections .section > .txt-content .cards .card .icon {
   border-radius: 50%;
@@ -804,6 +809,7 @@ body {
   justify-content: center;
   align-items: center;
   box-shadow: 2px 2px 5px #00000022;
+  margin-bottom: 10px;
 }
 .App .proprietaires .container .sections .section > .txt-content .cards .card .icon img {
   height: 30px;
@@ -811,9 +817,9 @@ body {
 }
 .App .proprietaires .container .sections .section > .txt-content .cards .card .txt-content {
   width: 70%;
-  padding-left: 30px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .App .proprietaires .container .sections .section > .txt-content .cards .card .txt-content .title {
   font-size: 22px;
@@ -821,7 +827,7 @@ body {
   margin: 0;
 }
 .App .proprietaires .container .sections .section > .txt-content .cards .card .txt-content .description {
-  font-size: 20px;
+  font-size: 18px;
 }
 .App .proprietaires .container .garanties {
   display: flex;
