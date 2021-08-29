@@ -1,11 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-// function handleClick(e) {
-//     e.preventDefault();
-//     console.log('Le lien a été cliqué.')
-// }
-
 class Header extends React.Component {
     constructor(props) {
       super(props);
@@ -19,8 +14,6 @@ class Header extends React.Component {
       this.handleClick = this.handleClick.bind(this);
       this.linkClick = this.linkClick.bind(this);
     }
-
-    
 
     handleClick() {
       this.setState(state => ({
