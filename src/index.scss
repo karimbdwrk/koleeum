@@ -956,6 +956,45 @@ body {
                         }
                     }
 
+                    &.first-section {
+                        display: grid;
+                        grid-template-areas: "illu txt"
+                                             "cards cards";
+
+                        .image {
+                            grid-area: illu;
+                            width: 100%;
+                        }
+                        &>.txt-content {
+                            grid-area: txt;
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            padding-bottom: 90px;
+
+                            .title {
+                                width: 100%;
+                            }
+                        }
+                        .cards {
+                            grid-area: cards;
+                            width: 100%;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            padding-top: 50px;
+
+                            .card {
+                                width: calc(30% - 30px);
+
+                                .txt-content {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+
                     &>.image {
                         width: 30%;
                         display: flex;
@@ -983,7 +1022,7 @@ body {
 
                         .cards {
                             display: flex;
-                            flex-direction: column;
+                            flex-direction: row;
             
                             // .card {
                             //     margin-bottom: 30px;
@@ -1030,7 +1069,7 @@ body {
                                 margin-bottom: 30px;
                                 display: flex;
                                 flex-direction: column;
-                                // width: 100%;
+                                width: 30%;
                                 // width: max-content;
                                 border: 1px solid #f0f0f0;
                                 padding: 30px;
@@ -1054,7 +1093,7 @@ body {
                                 }
 
                                 .txt-content {
-                                    width: 70%;
+                                    width: 100%;
                                     // padding-left: 30px;
                                     display: flex;
                                     flex-direction: column;
@@ -1069,6 +1108,99 @@ body {
                                     .description {
                                         font-size: 18px;
                                     }
+                                }
+                            }
+                        }
+                    }
+
+                    .cards {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+        
+                        // .card {
+                        //     margin-bottom: 30px;
+                        //     display: flex;
+                        //     flex-direction: row;
+                        //     width: 100%;
+        
+                        //     .icon {
+                        //         border-radius: 50%;
+                        //         // padding: 15px;
+                        //         height: 60px;
+                        //         width: 60px;
+                        //         display: flex;
+                        //         justify-content: center;
+                        //         align-items: center;
+                        //         box-shadow: 2px 2px 5px #00000022;
+        
+                        //         img {
+                        //             height: 30px;
+                        //             width: auto;
+                        //         }
+                        //     }
+
+                        //     .txt-content {
+                        //         width: 70%;
+                        //         padding-left: 30px;
+                        //         display: flex;
+                        //         flex-direction: column;
+                        //         align-items: flex-start;
+                                
+                        //         .title {
+                        //             font-size: 22px;
+                        //             font-weight: 500;
+                        //             margin: 0;
+                        //         }
+
+                        //         .description {
+                        //             font-size: 18px;
+                        //         }
+                        //     }
+                        // }
+
+                        .card {
+                            margin-bottom: 30px;
+                            display: flex;
+                            flex-direction: column;
+                            // width: 100%;
+                            // width: max-content;
+                            border: 1px solid #f0f0f0;
+                            padding: 30px;
+                            border-radius: 30px;
+        
+                            .icon {
+                                border-radius: 50%;
+                                // padding: 15px;
+                                height: 60px;
+                                width: 60px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                box-shadow: 2px 2px 5px #00000022;
+                                margin-bottom: 10px;
+        
+                                img {
+                                    height: 30px;
+                                    width: auto;
+                                }
+                            }
+
+                            .txt-content {
+                                width: 70%;
+                                // padding-left: 30px;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-start;
+                                
+                                .title {
+                                    font-size: 22px;
+                                    font-weight: 500;
+                                    margin: 0;
+                                }
+
+                                .description {
+                                    font-size: 18px;
                                 }
                             }
                         }
