@@ -22,6 +22,7 @@ import './App.css';
 import Proprietaires from './pages/proprietaires';
 import About from './pages/about';
 import Evaluation from './pages/evaluation';
+import LoginPage from './pages/login';
 
 class App extends React.Component {
   constructor(props) {
@@ -83,6 +84,8 @@ class App extends React.Component {
                   <Redirect from="/blog/locataires" to="/locataires" />
                   <Route path="/qui-sommes-nous" exact component={About} />
                   <Redirect from="/blog/qui-sommes-nous" to="/qui-sommes-nous" />
+                  <Route path="/Login" exact component={LoginPage} />
+                  <Redirect from="/blog/Login" to="/Login" />
                   <Route path="/rgpd" exact component={Rgpd} />
                   <Redirect from="/blog/rgpd" to="/rgpd" />
                   <Route path="/mentions-legales" exact component={Legal} />

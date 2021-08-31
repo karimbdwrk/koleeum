@@ -1200,6 +1200,72 @@ body {
 .App .post .container .post-date {
   text-align: right;
 }
+.App .login-page {
+  padding: 90px 0;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.App .login-page .container {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.App .login-page .container .container-logo {
+  padding-bottom: 90px;
+  display: flex;
+  justify-content: center;
+}
+.App .login-page .container .container-logo img {
+  max-width: 225px;
+}
+.App .login-page .container form {
+  flex-wrap: wrap;
+}
+.App .login-page .container form input {
+  transform: translateX(-20px);
+  width: 100%;
+  padding: 15px 25px;
+  border-radius: 30px;
+  border: 1px solid #e7e7e7;
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 15px;
+}
+.App .login-page .container form input::placeholder {
+  color: #AAA;
+}
+.App .login-page .container form input:focus {
+  outline: none;
+}
+.App .login-page .container form a {
+  color: #aaa;
+  text-align: right;
+  float: right;
+  margin-bottom: 30px;
+}
+.App .login-page .container form .btn {
+  width: 100%;
+  margin-bottom: 30px;
+}
+.App .login-page .container form .btn.disabled {
+  opacity: 0.7;
+  pointer-events: none;
+}
+.App .login-page .container .sign-up {
+  display: inline-flex;
+  justify-content: center;
+}
+.App .login-page .container .sign-up p {
+  text-align: center;
+  color: #aaa;
+}
+.App .login-page .container .sign-up p a {
+  color: #4270ED;
+}
 .App .registration {
   margin-top: 90px;
   margin-bottom: 90px;
