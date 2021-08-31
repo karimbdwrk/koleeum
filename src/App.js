@@ -78,10 +78,10 @@ class App extends React.Component {
             <div className="layout fadeIn">
               <Switch>
                   <Route path="/" exact component={Home} />
-                  <Route path="/proprietaires" exact component={Proprietaires} />
-                  <Redirect from="/blog/proprietaires" to="/proprietaires" />
-                  <Route path="/locataires" exact component={Locataires} />
-                  <Redirect from="/blog/locataires" to="/locataires" />
+                  <Route path="/investisseurs" exact component={Proprietaires} />
+                  <Redirect from="/blog/investisseurs" to="/investisseurs" />
+                  <Route path="/occupants" exact component={Locataires} />
+                  <Redirect from="/blog/occupants" to="/occupants" />
                   <Route path="/qui-sommes-nous" exact component={About} />
                   <Redirect from="/blog/qui-sommes-nous" to="/qui-sommes-nous" />
                   <Route path="/Login" exact component={LoginPage} />
