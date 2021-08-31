@@ -55,6 +55,7 @@ class Home extends React.Component {
                 <Services content={this.state.services} />
                 <Prestations content={this.state.prestations} />
                 <script type='text/javascript' src='https://app.arturin.com/social_widget.js?id=6233649'></script>
+                {/* <script src='https://app.arturin.com/social_widget.js?id=11146'></script> */}
                 <div>
                   <div id='monsitemedia_social_wall'></div>
                 </div>
