@@ -1,4 +1,5 @@
 #wesh {
+    display: flex;
     .morray {
         display: none;
     } 
@@ -241,6 +242,19 @@ form {
         font-family: 'Montserrat', sans-serif;
         option {
             font-family: 'Montserrat', sans-serif;
+        }
+    }
+}
+
+.merci {
+    padding: 90px 0;
+
+    h2 {
+        font-size: 24px;
+        text-align: center;
+
+        span {
+            font-size: 18px;
         }
     }
 }
@@ -942,6 +956,45 @@ body {
                         }
                     }
 
+                    &.first-section {
+                        display: grid;
+                        grid-template-areas: "illu txt"
+                                             "cards cards";
+
+                        .image {
+                            grid-area: illu;
+                            width: 100%;
+                        }
+                        &>.txt-content {
+                            grid-area: txt;
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            padding-bottom: 90px;
+
+                            .title {
+                                width: 100%;
+                            }
+                        }
+                        .cards {
+                            grid-area: cards;
+                            width: 100%;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            padding-top: 50px;
+
+                            .card {
+                                width: calc(30% - 30px);
+
+                                .txt-content {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+
                     &>.image {
                         width: 30%;
                         display: flex;
@@ -956,12 +1009,12 @@ body {
                         width: 50%;
                         margin-top: 3%;
                         padding: 0 30px;
-                        .title {
+                        &>.title {
                             font-size: 32px;
                             font-weight: 600;
                             margin-bottom: 20px;
                         }
-                        .description {
+                        &>.description {
                             font-size: 22px;
                             font-weight: 400;
                             margin-bottom: 20px;
@@ -969,13 +1022,58 @@ body {
 
                         .cards {
                             display: flex;
-                            flex-direction: column;
+                            flex-direction: row;
             
+                            // .card {
+                            //     margin-bottom: 30px;
+                            //     display: flex;
+                            //     flex-direction: row;
+                            //     width: 100%;
+            
+                            //     .icon {
+                            //         border-radius: 50%;
+                            //         // padding: 15px;
+                            //         height: 60px;
+                            //         width: 60px;
+                            //         display: flex;
+                            //         justify-content: center;
+                            //         align-items: center;
+                            //         box-shadow: 2px 2px 5px #00000022;
+            
+                            //         img {
+                            //             height: 30px;
+                            //             width: auto;
+                            //         }
+                            //     }
+
+                            //     .txt-content {
+                            //         width: 70%;
+                            //         padding-left: 30px;
+                            //         display: flex;
+                            //         flex-direction: column;
+                            //         align-items: flex-start;
+                                    
+                            //         .title {
+                            //             font-size: 22px;
+                            //             font-weight: 500;
+                            //             margin: 0;
+                            //         }
+
+                            //         .description {
+                            //             font-size: 18px;
+                            //         }
+                            //     }
+                            // }
+
                             .card {
                                 margin-bottom: 30px;
                                 display: flex;
-                                flex-direction: row;
-                                width: 100%;
+                                flex-direction: column;
+                                width: 30%;
+                                // width: max-content;
+                                border: 1px solid #f0f0f0;
+                                padding: 30px;
+                                border-radius: 30px;
             
                                 .icon {
                                     border-radius: 50%;
@@ -986,6 +1084,7 @@ body {
                                     justify-content: center;
                                     align-items: center;
                                     box-shadow: 2px 2px 5px #00000022;
+                                    margin-bottom: 10px;
             
                                     img {
                                         height: 30px;
@@ -994,10 +1093,11 @@ body {
                                 }
 
                                 .txt-content {
-                                    width: 70%;
-                                    padding-left: 30px;
+                                    width: 100%;
+                                    // padding-left: 30px;
                                     display: flex;
-                                    align-items: center;
+                                    flex-direction: column;
+                                    align-items: flex-start;
                                     
                                     .title {
                                         font-size: 22px;
@@ -1006,8 +1106,101 @@ body {
                                     }
 
                                     .description {
-                                        font-size: 20px;
+                                        font-size: 18px;
                                     }
+                                }
+                            }
+                        }
+                    }
+
+                    .cards {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+        
+                        // .card {
+                        //     margin-bottom: 30px;
+                        //     display: flex;
+                        //     flex-direction: row;
+                        //     width: 100%;
+        
+                        //     .icon {
+                        //         border-radius: 50%;
+                        //         // padding: 15px;
+                        //         height: 60px;
+                        //         width: 60px;
+                        //         display: flex;
+                        //         justify-content: center;
+                        //         align-items: center;
+                        //         box-shadow: 2px 2px 5px #00000022;
+        
+                        //         img {
+                        //             height: 30px;
+                        //             width: auto;
+                        //         }
+                        //     }
+
+                        //     .txt-content {
+                        //         width: 70%;
+                        //         padding-left: 30px;
+                        //         display: flex;
+                        //         flex-direction: column;
+                        //         align-items: flex-start;
+                                
+                        //         .title {
+                        //             font-size: 22px;
+                        //             font-weight: 500;
+                        //             margin: 0;
+                        //         }
+
+                        //         .description {
+                        //             font-size: 18px;
+                        //         }
+                        //     }
+                        // }
+
+                        .card {
+                            margin-bottom: 30px;
+                            display: flex;
+                            flex-direction: column;
+                            // width: 100%;
+                            // width: max-content;
+                            border: 1px solid #f0f0f0;
+                            padding: 30px;
+                            border-radius: 30px;
+        
+                            .icon {
+                                border-radius: 50%;
+                                // padding: 15px;
+                                height: 60px;
+                                width: 60px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                box-shadow: 2px 2px 5px #00000022;
+                                margin-bottom: 10px;
+        
+                                img {
+                                    height: 30px;
+                                    width: auto;
+                                }
+                            }
+
+                            .txt-content {
+                                width: 70%;
+                                // padding-left: 30px;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-start;
+                                
+                                .title {
+                                    font-size: 22px;
+                                    font-weight: 500;
+                                    margin: 0;
+                                }
+
+                                .description {
+                                    font-size: 18px;
                                 }
                             }
                         }
@@ -1382,6 +1575,86 @@ body {
             }
         }
 
+    .login-page {
+        padding: 90px 0;
+        height: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .container {
+            width: 300px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+
+            .container-logo {
+                padding-bottom: 90px;
+                display: flex;
+                justify-content: center;
+
+                img {
+                    max-width: 225px;
+                }
+            }
+
+            form {
+                flex-wrap: wrap;
+                input {
+                    transform: translateX(-20px);
+                    width: 100%;
+                    padding: 15px 25px;
+                    border-radius: 30px;
+                    border: 1px solid #e7e7e7;
+                    font-size: 16px;
+                    color: #666;
+                    margin-bottom: 15px;
+                    
+                    &::placeholder {
+                        color: #AAA;
+                    }
+    
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                a {
+                    color: #aaa;
+                    text-align: right;
+                    float: right;
+                    margin-bottom: 30px;
+                }
+
+                .btn {
+                    width: 100%;
+                    margin-bottom: 30px;
+
+                    &.disabled {
+                        opacity: .7;
+                        pointer-events: none;
+                    }
+                }
+            }
+
+            .sign-up {
+                display: inline-flex;
+                justify-content: center;
+
+                p {
+                    text-align: center;
+                    color: #aaa;
+
+                    a {
+                        color: #4270ED;
+                    }
+                }
+            }
+
+        }
+    }
+
     .registration {
         margin-top: 90px;
         margin-bottom: 90px;
@@ -1573,6 +1846,7 @@ body {
             & > .description {
                 font-size: 18px;
                 width: 66%;
+                text-align: center;
             }
 
             .cards {
@@ -2412,6 +2686,51 @@ body {
                     }
                 }
 
+            }
+        }
+
+        .evaluation {
+            .container {
+                &>.title {
+                    width: 100%;
+                    text-align: left;
+                    font-size: 28px;
+                }
+                &>.description {
+                    width: 100%;
+                }
+
+                .cards {
+                    width: 100%;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 30px;
+
+                    .card {
+                        width: 100%;
+                        max-width: 80%;
+                        margin-bottom: 15px;
+                    }
+                }
+
+                .evaluation-form {
+                    form {
+                        width: 100%;
+
+                        .contact, .identity {
+                            flex-direction: column;
+
+                            div {
+                                width: 100%;
+                            }
+                        }
+
+                        .btn {
+                            width: 100%;
+                        }
+                    }
+                }
             }
         }
 

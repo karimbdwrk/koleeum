@@ -6,8 +6,10 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const resetForm = () => {
     const form = document.getElementById('NewsletterForm')
+    const formContainer = document.querySelector('.newsletter-form')
     setTimeout(() => {
       form.querySelectorAll('input').forEach(element => element.value = '')
+      formContainer.innerHTML = '<div class="merci fadeIn"><h2>Merci.</span></h2></div>'
     }, 500)
     console.log('resetForm')
 }
