@@ -77,7 +77,6 @@ const ContactForm = () => (
             }),
         })
         .then(response => response.json())
-        .then(data => emailNotification(data))
         .then(data => console.log(data));
         // emailNotification()
         resetForm()
