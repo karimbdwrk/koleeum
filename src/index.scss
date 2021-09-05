@@ -371,7 +371,7 @@ body {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        padding: 90px 0;
+        padding: 120px 0 90px;
 
         .container {
             display: flex;
@@ -379,7 +379,7 @@ body {
             justify-content: center;
 
             .mouse {
-                margin: 50px 0;
+                margin: 90px 0 30px;
                 width: 50px;
                 height: 90px;
                 border: 3px solid $dark-color;
@@ -406,10 +406,13 @@ body {
 
                 &.txt-content {
                     color: $dark-color;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
 
                     .title {
                         font-size: 48px;
-                        margin-top: 90px;
+                        // margin-top: 90px;
                     }
     
                     .description {
@@ -436,11 +439,13 @@ body {
 
                 &.image {
                     display: flex;
-                    justify-content: flex-end;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-end;
 
                     img {
                         justify-self: flex-end;
-                        max-height: 600px;
+                        max-height: 550px;
                         width: auto;
                     }
 
@@ -605,7 +610,9 @@ body {
             .image {
                 width: 50%;
                 display: flex;
+                flex-direction: column;
                 justify-content: center;
+                align-items: center;
                 img {
                     max-height: 600px;
                 }
@@ -613,7 +620,11 @@ body {
 
             .txt-content {
                 width: 50%;
-                margin-top: 90px;
+                // margin-top: 90px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                // align-items: center;
 
                 & > .title {
                     font-size: 32px;
