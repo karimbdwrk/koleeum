@@ -27,6 +27,9 @@ class Footer extends React.Component {
             <div key={0} className="container">
               <div className="logo">
                   <img src={this.state.footerInfo.logo.url} />
+                  <p className="logo-address">{this.state.footerInfo.address}</p>
+                  <p className="logo-tel">{this.state.footerInfo.telephone}</p>
+                  <a className="logo-email" href={"mailto:" + this.state.footerInfo.email}>{this.state.footerInfo.email}</a>
               </div>
               {this.state.footerNav.map((column, index) => 
                 <div key={index} className="column">

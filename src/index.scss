@@ -787,9 +787,22 @@ body {
 
             .logo {
                 max-width: 200px;
+                margin-top: 15px;
 
                 img {
                     width: 150px;
+                }
+
+                .logo-address {
+
+                }
+
+                .logo-tel {
+
+                }
+
+                .logo-email {
+                    color: $dark-color;
                 }
             }
 
@@ -2282,7 +2295,7 @@ body {
 
                         &.image {
                             img {
-                                width: 66%;
+                                width: 100%;
                             }
                         }
 
@@ -2385,11 +2398,16 @@ body {
 
             .prestations {
                 padding: 50px 0;
+                margin-top: 50px;
                 .container {
                     flex-direction: column;
                     & > .image {
                         width: 100%;
                         max-height: 300px;
+
+                        img {
+                            height: 100%;
+                        }
                     }
                     & > .txt-content {
                         width: 100%;
@@ -2521,9 +2539,13 @@ body {
                         text-align: left;
                     }
                     .sections {
+                        width: 100%;
 
                         .section {
+                            width: 100%;
                             flex-direction: column;
+                            display: flex;
+                            grid-template-areas: inherit;
     
                             &:nth-of-type(2n) {
             
@@ -2538,6 +2560,7 @@ body {
         
                             .txt-content {
                                 padding-left: 0;
+                                padding-bottom: 0;
                                 width: 100%;
             
                                 .title {
@@ -2556,6 +2579,15 @@ body {
                                 width: 100%;
                                 img {
                                     width: 66%;
+                                }
+                            }
+
+                            .cards {
+                                display: flex;
+                                flex-direction: column;
+
+                                .card {
+                                    width: calc(100% - 60px);
                                 }
                             }
                 
@@ -2681,10 +2713,13 @@ body {
         .about-us {
             margin-top: 30px;
             .container {
+                h1 {
+                    font-size: 26px;
+                }
                 .title {
                     width: 100%;
                     text-align: left;
-                    font-size: 28px;
+                    font-size: 32px;
                 }
                 .infos {
                     width: 100vw;
