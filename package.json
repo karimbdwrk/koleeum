@@ -60,6 +60,5 @@
     "node": ">=10.x <14.x",
     "npm": "7.x"
   },
-  /*"proxy": "https://koleeum.fr:80",*/
   "homepage": "https://hidden-earth-77727.herokuapp.com/build"
 }
