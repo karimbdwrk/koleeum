@@ -6,11 +6,8 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const resetForm = () => {
     const form = document.getElementById('EvaluationForm')
-    const formContainer = document.querySelector('.evaluation-form')
     setTimeout(() => {
       form.querySelectorAll('input').forEach(element => element.value = '')
-      form.querySelector('textarea').value = ''
-      formContainer.innerHTML = '<div class="merci fadeIn"><h2>Merci.<br /><span>Nos équipes prendront contact avec vous dans les meilleurs délais</span></h2></div>'
     }, 500)
     console.log('resetForm')
 }

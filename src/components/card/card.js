@@ -19,7 +19,7 @@ const Card = ({ post }) => {
           <p className="card-description">
             {post.description}
           </p>
-          <Link to={`/blog/${post.slug}`} className="link" onClick={() => window.scrollTo(0, 0)}>En savoir plus ...</Link>
+          <Link to={`/post/${post.slug}`} className="link">En savoir plus ...</Link>
         </div>
       </div>
   );

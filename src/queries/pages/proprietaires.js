@@ -18,7 +18,6 @@ const PROPRIETAIRES_PAGE_QUERY = gql`
               }
               cards{
                 title
-                description
                 icon {
                   url
                 }

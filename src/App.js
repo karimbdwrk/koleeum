@@ -22,7 +22,6 @@ import './App.css';
 import Proprietaires from './pages/proprietaires';
 import About from './pages/about';
 import Evaluation from './pages/evaluation';
-import LoginPage from './pages/login';
 
 class App extends React.Component {
   constructor(props) {
@@ -78,24 +77,22 @@ class App extends React.Component {
             <div className="layout fadeIn">
               <Switch>
                   <Route path="/" exact component={Home} />
-                  <Route path="/investisseurs" exact component={Proprietaires} />
-                  <Redirect from="/blog/investisseurs" to="/investisseurs" />
-                  <Route path="/occupants" exact component={Locataires} />
-                  <Redirect from="/blog/occupants" to="/occupants" />
+                  <Route path="/proprietaires" exact component={Proprietaires} />
+                  <Redirect from="/post/proprietaires" to="/proprietaires" />
+                  <Route path="/locataires" exact component={Locataires} />
+                  <Redirect from="/post/locataires" to="/locataires" />
                   <Route path="/qui-sommes-nous" exact component={About} />
-                  <Redirect from="/blog/qui-sommes-nous" to="/qui-sommes-nous" />
-                  <Route path="/Login" exact component={LoginPage} />
-                  <Redirect from="/blog/Login" to="/Login" />
+                  <Redirect from="/post/qui-sommes-nous" to="/qui-sommes-nous" />
                   <Route path="/rgpd" exact component={Rgpd} />
-                  <Redirect from="/blog/rgpd" to="/rgpd" />
+                  <Redirect from="/post/rgpd" to="/rgpd" />
                   <Route path="/mentions-legales" exact component={Legal} />
-                  <Redirect from="/blog/mentions-legales" to="/mentions-legales" />
+                  <Redirect from="/post/mentions-legales" to="/mentions-legales" />
                   <Route path="/honoraires" exact component={Honoraires} />
-                  <Redirect from="/blog/honoraires" to="/honoraires" />
+                  <Redirect from="/post/honoraires" to="/honoraires" />
                   <Route path="/blog" exact component={Blog} />
-                  <Redirect from="/blog/blog" to="/blog" />
+                  <Redirect from="/post/blog" to="/blog" />
                   {/* <Route path="/post/:id" component={Post} exact /> */}
-                  <Route path="/blog/:id" children={<Article />} />
+                  <Route path="/post/:id" children={<Article />} />
                   <Route path="/evaluation" exact component={Evaluation} />
               </Switch>
             </div>
