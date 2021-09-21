@@ -279,7 +279,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 90px 0;
+  padding: 120px 0 90px;
 }
 .App .hero .container {
   display: flex;
@@ -287,7 +287,7 @@ body {
   justify-content: center;
 }
 .App .hero .container .mouse {
-  margin: 50px 0;
+  margin: 90px 0 30px;
   width: 50px;
   height: 90px;
   border: 3px solid #171E49;
@@ -313,10 +313,12 @@ body {
 }
 .App .hero .container > div.txt-content {
   color: #171E49;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .App .hero .container > div.txt-content .title {
   font-size: 48px;
-  margin-top: 90px;
 }
 .App .hero .container > div.txt-content .description {
   font-size: 24px;
@@ -336,11 +338,13 @@ body {
 }
 .App .hero .container > div.image {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
 }
 .App .hero .container > div.image img {
   justify-self: flex-end;
-  max-height: 600px;
+  max-height: 550px;
   width: auto;
 }
 .App .expertises {
@@ -472,14 +476,18 @@ body {
 .App .prestations .container .image {
   width: 50%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 .App .prestations .container .image img {
   max-height: 600px;
 }
 .App .prestations .container .txt-content {
   width: 50%;
-  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .App .prestations .container .txt-content > .title {
   font-size: 32px;
@@ -612,9 +620,13 @@ body {
 }
 .App footer.footer .container .logo {
   max-width: 200px;
+  margin-top: 15px;
 }
 .App footer.footer .container .logo img {
   width: 150px;
+}
+.App footer.footer .container .logo .logo-email {
+  color: #171E49;
 }
 .App footer.footer .container .column .title {
   font-size: 18px;
@@ -1587,7 +1599,7 @@ body {
     font-size: 18px;
   }
   .App .layout .hero .container > div.image img {
-    width: 66%;
+    width: 100%;
   }
   .App .layout .hero .container > div.mouse {
     display: none;
@@ -1653,6 +1665,7 @@ body {
   }
   .App .layout .prestations {
     padding: 50px 0;
+    margin-top: 50px;
   }
   .App .layout .prestations .container {
     flex-direction: column;
@@ -1660,6 +1673,9 @@ body {
   .App .layout .prestations .container > .image {
     width: 100%;
     max-height: 300px;
+  }
+  .App .layout .prestations .container > .image img {
+    height: 100%;
   }
   .App .layout .prestations .container > .txt-content {
     width: 100%;
@@ -1757,8 +1773,14 @@ body {
     width: 100%;
     text-align: left;
   }
+  .App .layout .proprietaires .container .sections {
+    width: 100%;
+  }
   .App .layout .proprietaires .container .sections .section {
+    width: 100%;
     flex-direction: column;
+    display: flex;
+    grid-template-areas: inherit;
   }
   .App .layout .proprietaires .container .sections .section:nth-of-type(2n) div:first-of-type {
     order: 1;
@@ -1768,6 +1790,7 @@ body {
   }
   .App .layout .proprietaires .container .sections .section .txt-content {
     padding-left: 0;
+    padding-bottom: 0;
     width: 100%;
   }
   .App .layout .proprietaires .container .sections .section .txt-content .title {
@@ -1783,6 +1806,13 @@ body {
   }
   .App .layout .proprietaires .container .sections .section .image img {
     width: 66%;
+  }
+  .App .layout .proprietaires .container .sections .section .cards {
+    display: flex;
+    flex-direction: column;
+  }
+  .App .layout .proprietaires .container .sections .section .cards .card {
+    width: calc(100% - 60px);
   }
   .App .layout .proprietaires .container .garanties .title {
     width: calc(100vw - 30px);
@@ -1866,10 +1896,13 @@ body {
   .App .about-us {
     margin-top: 30px;
   }
+  .App .about-us .container h1 {
+    font-size: 26px;
+  }
   .App .about-us .container .title {
     width: 100%;
     text-align: left;
-    font-size: 28px;
+    font-size: 32px;
   }
   .App .about-us .container .infos {
     width: 100vw;
