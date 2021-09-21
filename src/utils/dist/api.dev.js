@@ -18,6 +18,7 @@ function fetchAPI(path) {
       response,
       data,
       _args = arguments;
+    // eslint-disable-next-line no-undef
   return regeneratorRuntime.async(function fetchAPI$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
@@ -35,6 +36,7 @@ function fetchAPI(path) {
           requestUrl = getStrapiURL(path); // const response = await fetch(requestUrl, mergedOptions)
 
           _context.next = 5;
+          // eslint-disable-next-line no-undef
           return regeneratorRuntime.awrap(fetch(requestUrl));
 
         case 5:
@@ -50,6 +52,7 @@ function fetchAPI(path) {
 
         case 9:
           _context.next = 11;
+          // eslint-disable-next-line no-undef
           return regeneratorRuntime.awrap(response.json());
 
         case 11:

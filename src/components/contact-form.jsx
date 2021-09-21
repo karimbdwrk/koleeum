@@ -115,8 +115,8 @@ const ContactForm = () => (
   </div>
 )
 
-const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey('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');
+/*const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const msg = {
     to: 'contact@badwork.fr',
     from: 'karim@badwork.fr',
@@ -124,6 +124,17 @@ const msg = {
     text: 'and easy to do anywhere, even with Node.js',
     html: '<strong>and easy to do anywhere, even with Node.js</strong>',
 };
-sgMail.send(msg);
+sgMail
+    .send(msg)
+    .then(
+        () => {},
+        error => {
+            console.error(error);
+            
+            if(error.message) {
+                console.error(error.response.body);
+            }
+        }
+    );*/
 
 export default ContactForm
