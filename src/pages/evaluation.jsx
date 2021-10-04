@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Query from "../components/query/query";
-import LOCATAIRES_PAGE_QUERY from "../queries/pages/locataires";
+import EVALUATION_PAGE_QUERY from "../queries/pages/evaluation";
 import Markdown from 'markdown-to-jsx';
 import EvaluationForm from '../components/evaluation-form';
 
@@ -39,13 +39,13 @@ class Evaluation extends React.Component {
     render() {
 
         return (
-            <Query query={LOCATAIRES_PAGE_QUERY}>
-                {({ data: { locataire } }) => {
+            <Query query={EVALUATION_PAGE_QUERY}>
+                {({ data: { evaluation } }) => {
                     return (
                     <div className="evaluation fadeIn">
                         <div className="container">
-                            <h1 className="title">{locataire.title}</h1>
-                            <Markdown options={{ wrapper: 'div', forceWrapper: true }} className="description">{locataire.description}</Markdown>
+                            <h1 className="title">{evaluation.title}</h1>
+                            <Markdown options={{ wrapper: 'div', forceWrapper: true }} className="description">{evaluation.description}</Markdown>
                             <div className="cards">
                                 <div className="card" onClick={() => this.handleClick("investissement")}>
                                     <img src="https://koleeum-bucket.s3.eu-west-3.amazonaws.com/prestations_298cab5807.svg" />
@@ -60,7 +60,7 @@ class Evaluation extends React.Component {
                                     <h2>Gestion Locative</h2>
                                 </div>
                             </div>
-                            <EvaluationForm type = {this.state.type}/>
+                            <EvaluationForm type={this.state.type}/>
                         </div>
                     </div>
                     );

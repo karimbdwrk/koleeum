@@ -1,3 +1,6 @@
+#wesh {
+  display: flex;
+}
 #wesh .morray {
   display: none;
 }
@@ -178,6 +181,17 @@ form select {
 }
 form select option {
   font-family: "Montserrat", sans-serif;
+}
+
+.merci {
+  padding: 90px 0;
+}
+.merci h2 {
+  font-size: 24px;
+  text-align: center;
+}
+.merci h2 span {
+  font-size: 18px;
 }
 
 @media screen and (max-width: 1400px) {
@@ -763,6 +777,39 @@ body {
 .App .proprietaires .container .sections .section:nth-of-type(2n) div:last-of-type {
   order: 1;
 }
+.App .proprietaires .container .sections .section.first-section {
+  display: grid;
+  grid-template-areas: "illu txt" "cards cards";
+}
+.App .proprietaires .container .sections .section.first-section .image {
+  grid-area: illu;
+  width: 100%;
+}
+.App .proprietaires .container .sections .section.first-section > .txt-content {
+  grid-area: txt;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 90px;
+}
+.App .proprietaires .container .sections .section.first-section > .txt-content .title {
+  width: 100%;
+}
+.App .proprietaires .container .sections .section.first-section .cards {
+  grid-area: cards;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 50px;
+}
+.App .proprietaires .container .sections .section.first-section .cards .card {
+  width: calc(30% - 30px);
+}
+.App .proprietaires .container .sections .section.first-section .cards .card .txt-content {
+  width: 100%;
+}
 .App .proprietaires .container .sections .section > .image {
   width: 30%;
   display: flex;
@@ -777,25 +824,28 @@ body {
   margin-top: 3%;
   padding: 0 30px;
 }
-.App .proprietaires .container .sections .section > .txt-content .title {
+.App .proprietaires .container .sections .section > .txt-content > .title {
   font-size: 32px;
   font-weight: 600;
   margin-bottom: 20px;
 }
-.App .proprietaires .container .sections .section > .txt-content .description {
+.App .proprietaires .container .sections .section > .txt-content > .description {
   font-size: 22px;
   font-weight: 400;
   margin-bottom: 20px;
 }
 .App .proprietaires .container .sections .section > .txt-content .cards {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 .App .proprietaires .container .sections .section > .txt-content .cards .card {
   margin-bottom: 30px;
   display: flex;
-  flex-direction: row;
-  width: 100%;
+  flex-direction: column;
+  width: 30%;
+  border: 1px solid #f0f0f0;
+  padding: 30px;
+  border-radius: 30px;
 }
 .App .proprietaires .container .sections .section > .txt-content .cards .card .icon {
   border-radius: 50%;
@@ -805,16 +855,17 @@ body {
   justify-content: center;
   align-items: center;
   box-shadow: 2px 2px 5px #00000022;
+  margin-bottom: 10px;
 }
 .App .proprietaires .container .sections .section > .txt-content .cards .card .icon img {
   height: 30px;
   width: auto;
 }
 .App .proprietaires .container .sections .section > .txt-content .cards .card .txt-content {
-  width: 70%;
-  padding-left: 30px;
+  width: 100%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .App .proprietaires .container .sections .section > .txt-content .cards .card .txt-content .title {
   font-size: 22px;
@@ -822,7 +873,48 @@ body {
   margin: 0;
 }
 .App .proprietaires .container .sections .section > .txt-content .cards .card .txt-content .description {
-  font-size: 20px;
+  font-size: 18px;
+}
+.App .proprietaires .container .sections .section .cards {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.App .proprietaires .container .sections .section .cards .card {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f0f0f0;
+  padding: 30px;
+  border-radius: 30px;
+}
+.App .proprietaires .container .sections .section .cards .card .icon {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 5px #00000022;
+  margin-bottom: 10px;
+}
+.App .proprietaires .container .sections .section .cards .card .icon img {
+  height: 30px;
+  width: auto;
+}
+.App .proprietaires .container .sections .section .cards .card .txt-content {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.App .proprietaires .container .sections .section .cards .card .txt-content .title {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0;
+}
+.App .proprietaires .container .sections .section .cards .card .txt-content .description {
+  font-size: 18px;
 }
 .App .proprietaires .container .garanties {
   display: flex;
@@ -1120,6 +1212,72 @@ body {
 .App .post .container .post-date {
   text-align: right;
 }
+.App .login-page {
+  padding: 90px 0;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.App .login-page .container {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.App .login-page .container .container-logo {
+  padding-bottom: 90px;
+  display: flex;
+  justify-content: center;
+}
+.App .login-page .container .container-logo img {
+  max-width: 225px;
+}
+.App .login-page .container form {
+  flex-wrap: wrap;
+}
+.App .login-page .container form input {
+  transform: translateX(-20px);
+  width: 100%;
+  padding: 15px 25px;
+  border-radius: 30px;
+  border: 1px solid #e7e7e7;
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 15px;
+}
+.App .login-page .container form input::placeholder {
+  color: #AAA;
+}
+.App .login-page .container form input:focus {
+  outline: none;
+}
+.App .login-page .container form a {
+  color: #aaa;
+  text-align: right;
+  float: right;
+  margin-bottom: 30px;
+}
+.App .login-page .container form .btn {
+  width: 100%;
+  margin-bottom: 30px;
+}
+.App .login-page .container form .btn.disabled {
+  opacity: 0.7;
+  pointer-events: none;
+}
+.App .login-page .container .sign-up {
+  display: inline-flex;
+  justify-content: center;
+}
+.App .login-page .container .sign-up p {
+  text-align: center;
+  color: #aaa;
+}
+.App .login-page .container .sign-up p a {
+  color: #4270ED;
+}
 .App .registration {
   margin-top: 90px;
   margin-bottom: 90px;
@@ -1275,6 +1433,7 @@ body {
 .App .evaluation .container > .description {
   font-size: 18px;
   width: 66%;
+  text-align: center;
 }
 .App .evaluation .container .cards {
   display: flex;
@@ -1912,6 +2071,38 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  .App .evaluation .container > .title {
+    width: 100%;
+    text-align: left;
+    font-size: 28px;
+  }
+  .App .evaluation .container > .description {
+    width: 100%;
+  }
+  .App .evaluation .container .cards {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .App .evaluation .container .cards .card {
+    width: 100%;
+    max-width: 80%;
+    margin-bottom: 15px;
+  }
+  .App .evaluation .container .evaluation-form form {
+    width: 100%;
+  }
+  .App .evaluation .container .evaluation-form form .contact, .App .evaluation .container .evaluation-form form .identity {
+    flex-direction: column;
+  }
+  .App .evaluation .container .evaluation-form form .contact div, .App .evaluation .container .evaluation-form form .identity div {
+    width: 100%;
+  }
+  .App .evaluation .container .evaluation-form form .btn {
+    width: 100%;
   }
   .App footer.footer {
     padding-left: 15px;

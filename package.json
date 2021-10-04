@@ -62,6 +62,6 @@
     "node": ">=10.x <14.x",
     "npm": "7.x"
   },
-  "proxy": "https://koleeum.fr:80",
+  "proxy": "https://koleeum.immo:80",
   "homepage": "https://koleeum.immo/build"
 }
