@@ -4,6 +4,7 @@ import Skills from '../sections/skills'
 import Services from '../sections/services'
 import Prestations from '../sections/prestations'
 import Newsletter from '../sections/newsletter'
+import Arturin from "../components/arturin";
 
 class Home extends React.Component {
     constructor(props) {
@@ -14,34 +15,32 @@ class Home extends React.Component {
     }
 
     componentDidMount() {
-        fetch("https://koleeum-admin.herokuapp.com/home")
-          .then(res => res.json())
-          .then(
-            (result) => {
-              this.setState({
-                isLoaded: true,
-                hero: result.hero,
-                expertises: result.expertise,
-                services: result.services,
-                prestations: result.prestations,
-                newsletter: result.newsletter
-              });
-    
-            },
-            // Remarque : il est important de traiter les erreurs ici
-            // au lieu d'utiliser un bloc catch(), pour ne pas passer à la trappe
-            // des exceptions provenant de réels bugs du composant.
-            (error) => {
-              this.setState({
-                isLoaded: true,
-                error
-              });
-            }
-          )
+      fetch("https://koleeum-admin.herokuapp.com/home")
+        .then(res => res.json())
+        .then(
+          (result) => {
+            this.setState({
+              isLoaded: true,
+              hero: result.hero,
+              expertises: result.expertise,
+              services: result.services,
+              prestations: result.prestations,
+              newsletter: result.newsletter
+            });
+          },
+          // Remarque : il est important de traiter les erreurs ici
+          // au lieu d'utiliser un bloc catch(), pour ne pas passer à la trappe
+          // des exceptions provenant de réels bugs du composant.
+          (error) => {
+            this.setState({
+              isLoaded: true,
+              error
+            });
+          }
+        )
     }
 
     render() {
-
         const { error, isLoaded, items } = this.state;
         if (error) {
             return <div>Erreur : {error.message}</div>;
@@ -50,16 +49,16 @@ class Home extends React.Component {
         } else {
           return (
             <div className="home fadeIn">
-                <Hero content={this.state.hero} />
-                <Skills content={this.state.expertises} />
-                <Services content={this.state.services} />
-                <Prestations content={this.state.prestations} />
-                <div><div id='monsitemedia_social_wall'></div></div>
-                <Newsletter content={this.state.newsletter} />
+              <Hero content={this.state.hero} />
+              <Skills content={this.state.expertises} />
+              <Services content={this.state.services} />
+              <Prestations content={this.state.prestations} />
+              <div id="cible"></div>
+              <Newsletter content={this.state.newsletter} />
             </div>
           );
         }
-        
+
     }
 
 }
