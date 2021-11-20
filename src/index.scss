@@ -2108,7 +2108,12 @@ body {
 
         & > .widget-wrapper {
             position: absolute;
-            bottom: 960px;
+            bottom: 900px;
+            font-family: 'Montserrat', sans-serif;
+
+            a {
+                font-family: 'Montserrat', sans-serif;
+            }
         }
     }
 }

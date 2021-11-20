@@ -1606,7 +1606,11 @@ body {
 }
 #monsitemedia_social_wall.show > .widget-wrapper {
   position: absolute;
-  bottom: 960px;
+  bottom: 900px;
+  font-family: "Montserrat", sans-serif;
+}
+#monsitemedia_social_wall.show > .widget-wrapper a {
+  font-family: "Montserrat", sans-serif;
 }
 
 .CookieConsent {
