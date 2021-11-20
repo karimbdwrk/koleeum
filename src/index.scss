@@ -2114,6 +2114,20 @@ body {
             a {
                 font-family: 'Montserrat', sans-serif;
             }
+
+            .pagination {
+                em {
+                    background-color: #fff;
+                    border: 0px;
+                    font-weight: bold;
+                    color: #4270ED;
+                }
+
+                a {
+                    border: 0px;
+                }
+
+            }
         }
     }
 }
@@ -2138,6 +2152,16 @@ body {
 
 @media screen and (max-width:425px) {
 
+    #monsitemedia_social_wall {
+    
+        &.show {
+
+            & > .widget-wrapper {
+                bottom: 1700px;
+            }
+        }
+    }
+
     .App {
         overflow-x: hidden;
         padding-left: 0px;
@@ -2149,7 +2173,7 @@ body {
             justify-content: center;
             padding: 15px;
             background-color: #FFF;
-            width: calc(100% - 30px);
+            width: 100vw;
             box-shadow: 5px 5px 15px #00000010;
     
             .container {
@@ -2464,6 +2488,7 @@ body {
             }
 
             .newsletter {
+                margin-top: 5000px;
                 .container {
                     width: calc(100% - 30px);
                     padding: 30px 15px;
