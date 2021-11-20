@@ -61,6 +61,8 @@ class App extends React.Component {
         }
       )
 
+      document.body.classList.add('applicatif')
+
   }
 
   render() {

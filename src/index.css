@@ -2,7 +2,7 @@
   display: flex;
 }
 #wesh .morray {
-  display: none;
+  display: block;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -553,7 +553,7 @@ body {
   font-size: 20px;
 }
 .App .newsletter {
-  margin-top: 90px;
+  margin-top: 2500px;
   margin-bottom: 90px;
   padding: 30px 0;
   display: flex;
@@ -1594,6 +1594,19 @@ body {
   background-position: calc(100% - 30px) calc(1em + 5px), calc(100% - 25px) calc(1em + 5px), calc(100% - 2.5em) 0.5em;
   background-size: 5px 5px, 5px 5px, 1px 1.5em;
   background-repeat: no-repeat;
+}
+
+#monsitemedia_social_wall {
+  display: none;
+  position: relative;
+}
+#monsitemedia_social_wall.show {
+  display: flex;
+  justify-content: center;
+}
+#monsitemedia_social_wall.show > .widget-wrapper {
+  position: absolute;
+  bottom: 960px;
 }
 
 .CookieConsent {

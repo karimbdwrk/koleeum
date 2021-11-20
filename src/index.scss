@@ -1,7 +1,7 @@
 #wesh {
     display: flex;
     .morray {
-        display: none;
+        display: block;
     } 
 }
 
@@ -691,7 +691,7 @@ body {
     }
 
     .newsletter {
-        margin-top: 90px;
+        margin-top: 2500px;
         margin-bottom: 90px;
         padding: 30px 0;
         display: flex;
@@ -2098,7 +2098,20 @@ body {
     }
 }
 
+#monsitemedia_social_wall {
+    display: none;
+    position: relative;
 
+    &.show {
+        display: flex;
+        justify-content: center;
+
+        & > .widget-wrapper {
+            position: absolute;
+            bottom: 960px;
+        }
+    }
+}
 
 .CookieConsent {
     display: flex;
