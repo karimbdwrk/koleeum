@@ -552,8 +552,14 @@ body {
 .App .prestations .container .txt-content .prestas .presta .txt .description {
   font-size: 20px;
 }
+.App .title-actu {
+  width: 100%;
+  font-size: 48px;
+  text-align: center;
+  margin-top: 90px;
+}
 .App .newsletter {
-  margin-top: 2500px;
+  margin-top: 1700px;
   margin-bottom: 90px;
   padding: 30px 0;
   display: flex;
@@ -639,8 +645,15 @@ body {
 .App footer.footer .container .logo img {
   width: 150px;
 }
+.App footer.footer .container .logo .logo-address {
+  font-size: 14px;
+}
+.App footer.footer .container .logo .logo-tel {
+  font-size: 14px;
+}
 .App footer.footer .container .logo .logo-email {
   color: #171E49;
+  font-size: 14px;
 }
 .App footer.footer .container .column .title {
   font-size: 18px;
@@ -665,6 +678,9 @@ body {
 }
 .App footer.footer .container .contact-form {
   width: 35%;
+}
+.App footer.footer .container .contact-form h3.title {
+  font-size: 18px;
 }
 .App footer.footer .container .contact-form form .error-message {
   color: red;
@@ -735,6 +751,9 @@ body {
   height: 20px;
   width: auto;
   filter: invert(1);
+}
+.App footer.footer .container:last-of-type .copyright {
+  font-size: 14px;
 }
 .App .proprietaires {
   display: flex;
@@ -1117,12 +1136,14 @@ body {
 }
 .App .about-us .container .infos .title {
   text-align: center;
+  font-size: 24px;
 }
 .App .about-us .container .infos .contact-links {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   width: 500px;
+  font-size: 18px;
 }
 .App .blog {
   display: flex;
@@ -1176,10 +1197,17 @@ body {
   position: absolute;
 }
 .App .blog .container .cards .card .card-txt {
-  padding: 15px 15px 30px;
+  padding: 15px 15px 90px;
 }
 .App .blog .container .cards .card .card-txt .link {
   color: #171E49;
+  font-size: 14px;
+}
+.App .blog .container .cards .card .card-txt .card-title {
+  font-size: 22px;
+}
+.App .blog .container .cards .card .card-txt .card-description {
+  font-size: 14px;
 }
 .App .post {
   display: flex;
@@ -1245,7 +1273,6 @@ body {
   flex-wrap: wrap;
 }
 .App .login-page .container form input {
-  transform: translateX(-20px);
   width: 100%;
   padding: 15px 25px;
   border-radius: 30px;
@@ -1640,6 +1667,10 @@ body {
 @media screen and (max-width: 425px) {
   #monsitemedia_social_wall.show > .widget-wrapper {
     bottom: 1700px;
+    width: 100%;
+  }
+  #monsitemedia_social_wall.show > .widget-wrapper a.track-link {
+    font-size: 20px;
   }
 
   .App {
@@ -1891,7 +1922,7 @@ body {
     font-size: 18px;
   }
   .App .layout .newsletter {
-    margin-top: 5000px;
+    margin-top: 2000px;
   }
   .App .layout .newsletter .container {
     width: calc(100% - 30px);

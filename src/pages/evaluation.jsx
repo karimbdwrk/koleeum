@@ -35,8 +35,10 @@ class Evaluation extends React.Component {
         // }
       
     }
+    
 
     render() {
+        document.getElementById('monsitemedia_social_wall').classList.remove('show')
 
         return (
             <Query query={EVALUATION_PAGE_QUERY}>
