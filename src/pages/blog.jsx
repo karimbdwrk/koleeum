@@ -99,6 +99,7 @@ import POSTS_QUERY from "../queries/posts/posts";
 import BLOGPAGE_QUERY from "../queries/pages/blog";
 
 const Blog = () => {
+  document.getElementById('monsitemedia_social_wall').classList.remove('show')
 
   return (
       <div className="blog fadeIn">
