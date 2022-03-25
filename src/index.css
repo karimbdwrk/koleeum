@@ -1117,6 +1117,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  max-width: 900px;
 }
 .App .about-us .container > .title {
   font-size: 42px;
